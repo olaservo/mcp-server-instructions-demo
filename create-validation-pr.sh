@@ -4,7 +4,7 @@
 
 set -e
 
-BRANCH_NAME="feature/input-validation-enhancement"
+BRANCH_NAME="feature/input-validation-enhancement-v2"
 BASE_BRANCH="main"
 
 echo "Creating validation enhancement PR..."
