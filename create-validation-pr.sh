@@ -9,6 +9,44 @@ BASE_BRANCH="main"
 
 echo "Creating validation enhancement PR..."
 
+# Cleanup any existing branch and PR first
+echo "Cleaning up any existing test branch and PR..."
+
+# Check if we're currently on the branch to be deleted
+CURRENT_BRANCH=$(git branch --show-current)
+if [ "$CURRENT_BRANCH" = "$BRANCH_NAME" ]; then
+    echo "Switching from $BRANCH_NAME to $BASE_BRANCH..."
+    git checkout "$BASE_BRANCH"
+fi
+
+# Delete local branch if it exists
+if git branch --list | grep -q "$BRANCH_NAME"; then
+    echo "Deleting local branch: $BRANCH_NAME"
+    git branch -D "$BRANCH_NAME"
+else
+    echo "Local branch $BRANCH_NAME not found"
+fi
+
+# Delete remote branch if it exists
+if git ls-remote --heads origin "$BRANCH_NAME" | grep -q "$BRANCH_NAME"; then
+    echo "Deleting remote branch: origin/$BRANCH_NAME"
+    git push origin --delete "$BRANCH_NAME"
+else
+    echo "Remote branch origin/$BRANCH_NAME not found"
+fi
+
+# Close any open PR for this branch
+echo "Checking for open PR..."
+if gh pr list --head "$BRANCH_NAME" --json number --jq '.[0].number' 2>/dev/null | grep -q '^[0-9]'; then
+    PR_NUMBER=$(gh pr list --head "$BRANCH_NAME" --json number --jq '.[0].number')
+    echo "Closing PR #$PR_NUMBER..."
+    gh pr close "$PR_NUMBER"
+else
+    echo "No open PR found for branch $BRANCH_NAME"
+fi
+
+echo "Cleanup completed. Now creating new branch..."
+
 # Create and switch to feature branch
 git checkout -b "$BRANCH_NAME" "$BASE_BRANCH"
 
@@ -390,7 +428,7 @@ git commit -m "Add comprehensive input validation middleware
 - Implemented ID format validation for route parameters
 - Updated routes to use validation middleware with proper error responses
 - Added comprehensive test coverage for all validation scenarios
-- Updated README with validation rules and error response format
+- Updated README with validation rules and error response format"
 
 # Run tests to ensure everything works
 npm test
@@ -402,7 +440,7 @@ npm run build
 git push -u origin "$BRANCH_NAME"
 
 # Create PR
-gh pr create --title "Add comprehensive input validation with detailed error responses" --body "$(cat <<'EOF'
+gh pr create --title "Add comprehensive input validation with detailed error responses" --body "$(cat <<'PRBODY'
 ## Summary
 - Added comprehensive input validation middleware for all Todo endpoints
 - Implemented field-specific error messages with structured error responses  
@@ -487,7 +525,7 @@ gh pr create --title "Add comprehensive input validation with detailed error res
 - [ ] Add internationalization for error messages
 - [ ] Consider adding request sanitization middleware
 
-EOF
+PRBODY
 )"
 
 echo "PR created successfully!"
