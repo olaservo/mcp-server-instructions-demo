@@ -479,7 +479,7 @@ gh pr create --title "Add comprehensive input validation with detailed error res
    ```
 
 ## Breaking Changes
-⚠️ **Error response format has changed** - API consumers will need to handle the new structured error format
+**Error response format has changed** - API consumers will need to handle the new structured error format
 
 ## Future Enhancements
 - [ ] Add rate limiting validation
