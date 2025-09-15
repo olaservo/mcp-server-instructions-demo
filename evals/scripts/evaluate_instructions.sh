@@ -1,6 +1,26 @@
 #!/bin/bash
 
 # MCP GitHub Server Instructions Evaluation Script
+# 
+# This script evaluates the effectiveness of instruction prompts by analyzing
+# tool usage patterns in chat transcripts. It specifically measures whether
+# models follow the prescribed PR review workflow when given explicit instructions.
+#
+# Key functionality:
+# - Extracts tool calls from VS Code chat transcripts (JSON format)
+# - Detects instruction presence from actual MCP server configuration in transcript content
+# - Extracts actual model name from transcript metadata
+# - Validates that models with instructions use the three-step PR review workflow:
+#   create_pending_pull_request_review → add_comment_to_pending_review → submit_pending_pull_request_review
+# - Accepts any PR review approach for models without instructions
+# - Counts tool usage occurrences for detailed analysis
+# - Generates CSV output with success rates and tool usage statistics
+#
+# The instruction being evaluated:
+# "PR review workflow: Always use 'create_pending_pull_request_review' → 
+#  'add_comment_to_pending_review' → 'submit_pending_pull_request_review' for 
+#  complex reviews with line-specific comments."
+#
 # Usage: ./evaluate_instructions.sh <transcript_dir> <output_file>
 
 set -e
@@ -140,6 +160,42 @@ check_tools_present() {
     esac
 }
 
+# Function to extract actual model name from transcript metadata
+extract_model_name() {
+    local transcript_file="$1"
+    
+    # Try to extract model name from various possible locations in the transcript
+    local model_name=$(jq -r '
+        .requests[0].modelId // 
+        .requests[0].result.metadata.model // 
+        .requests[0].modelName // 
+        .model // 
+        .metadata.model // 
+        .responderUsername // 
+        empty' "$transcript_file" 2>/dev/null | head -1)
+    
+    # Clean up and return
+    echo "${model_name:-unknown}" | tr -d '"' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//'
+}
+
+# Function to check for instructions in transcript content
+check_instructions_in_content() {
+    local transcript_file="$1"
+    
+    # Look for the specific instruction text in the MCP server source instructions
+    local has_instruction=$(jq -r '
+        .requests[].response[]?.source.instructions // empty
+        ' "$transcript_file" 2>/dev/null | 
+        grep -i "create_pending_pull_request_review.*add_comment_to_pending_review.*submit_pending_pull_request_review\|PR review workflow" | 
+        head -1)
+    
+    if [[ -n "$has_instruction" ]]; then
+        echo "with_instructions"
+    else
+        echo "no_instructions_found"
+    fi
+}
+
 # Function to count tool occurrences
 count_tool_occurrences() {
     local sequence="$1"
@@ -216,17 +272,20 @@ for transcript in "$TRANSCRIPT_DIR"/*.json; do
     
     echo "Processing: $(basename "$transcript")"
     
-    # Parse metadata
-    metadata=$(parse_metadata "$transcript")
-    model=$(echo "$metadata" | cut -d',' -f1)
-    instructions=$(echo "$metadata" | cut -d',' -f2)
-    task=$(echo "$metadata" | cut -d',' -f3)
+    # Extract actual model name from transcript content
+    model=$(extract_model_name "$transcript")
+    
+    # Check for instructions in transcript content
+    instructions_variant=$(check_instructions_in_content "$transcript")
+    
+    # Default task type (could be enhanced to detect from content if needed)
+    task="pr_review"
     
     # Extract tool sequence
     sequence=$(extract_tool_sequence "$transcript")
     
     # Check if expected tools are present
-    success=$(check_tools_present "$sequence" "$task" "$instructions")
+    success=$(check_tools_present "$sequence" "$task" "$instructions_variant")
     
     # Count tool occurrences
     create_pending_count=$(count_tool_occurrences "$sequence" "create_pending_pull_request_review")
@@ -249,7 +308,7 @@ for transcript in "$TRANSCRIPT_DIR"/*.json; do
         cut -c1-100 || echo "")
     
     # Write to CSV
-    echo "$model,$instructions,$task,$success,\"$sequence\",$error_type,\"$notes\",$create_pending_count,$add_comment_count,$submit_pending_count,$create_and_submit_count" >> "$OUTPUT_FILE"
+    echo "$model,$instructions_variant,$task,$success,\"$sequence\",$error_type,\"$notes\",$create_pending_count,$add_comment_count,$submit_pending_count,$create_and_submit_count" >> "$OUTPUT_FILE"
 done
 
 echo ""
@@ -264,9 +323,10 @@ echo "Successful: $success"
 echo "Success rate: $(( success * 100 / total ))%"
 echo ""
 echo "By instruction variant:"
-for variant in "with_instructions" "NO_instructions"; do
-    variant_total=$(grep ",$variant," "$OUTPUT_FILE" | wc -l)
-    variant_success=$(grep ",$variant,.*,true," "$OUTPUT_FILE" | wc -l)
+for variant in "with_instructions" "no_instructions_found"; do
+    # Check the instructions_variant column (2nd column)  
+    variant_total=$(awk -F',' -v var="$variant" '$2 == var' "$OUTPUT_FILE" | wc -l)
+    variant_success=$(awk -F',' -v var="$variant" '$2 == var && $4 == "true"' "$OUTPUT_FILE" | wc -l)
     if [[ $variant_total -gt 0 ]]; then
         echo "  $variant: $variant_success/$variant_total ($(( variant_success * 100 / variant_total ))%)"
     fi
