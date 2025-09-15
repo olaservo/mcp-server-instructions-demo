@@ -48,3 +48,30 @@ npm run lint
   updatedAt: Date;
 }
 ```
+
+## Validation Rules
+
+### Creating Todos
+- **title**: Required, 1-100 characters, no HTML tags
+- **description**: Optional, max 500 characters, no HTML tags
+
+### Updating Todos
+- **title**: Optional, 1-100 characters, no HTML tags (if provided)
+- **description**: Optional, max 500 characters, no HTML tags (if provided)  
+- **completed**: Optional, must be boolean (if provided)
+
+### ID Parameters
+- Must be positive integers only
+
+### Error Response Format
+```json
+{
+  "error": "Validation failed",
+  "details": [
+    {
+      "field": "title",
+      "message": "Title is required"
+    }
+  ]
+}
+```
