@@ -1,0 +1,941 @@
+{
+  "requesterUsername": "olaservo",
+  "requesterAvatarIconUri": {
+    "$mid": 1,
+    "path": "/u/16480113",
+    "scheme": "https",
+    "authority": "avatars.githubusercontent.com",
+    "query": "v=4"
+  },
+  "responderUsername": "GitHub Copilot",
+  "responderAvatarIconUri": {
+    "id": "copilot"
+  },
+  "initialLocation": "panel",
+  "requests": [
+    {
+      "requestId": "request_1b2cc017-8ba7-4e26-a205-e4e620327976",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 55
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 56
+            },
+            "text": "Review PR #18 in olaservo/mcp-server-instructions-demo.",
+            "kind": "text"
+          }
+        ],
+        "text": "Review PR #18 in olaservo/mcp-server-instructions-demo."
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "I'll fetch your GitHub identity, PR details, changed files, and the unified diff for PR #18 so I can inspect the changes and prepare review comments. ",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/c:/Users/johnn/OneDrive/Documents/GitHub/olaservo/mcp-server-instructions-demo/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_github-with-i_get_me"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running Get my user profile",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran Get my user profile ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "originMessage": "github-with-instructions (MCP Server)",
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "github-mcp-server",
+            "instructions": "The GitHub MCP Server provides GitHub API tools. Tool selection guidance: Use 'list_*' tools for broad, simple retrieval and pagination of all items of a type (e.g., all issues, all PRs, all branches) with basic filtering. Use 'search_*' tools for targeted queries with specific criteria, keywords, or complex filters (e.g., issues with certain text, PRs by author, code containing functions). Context management: 1) GitHub API responses can overflow context windows, 2) Process large datasets in batches of 5-10 items, 3) For summarization tasks, fetch minimal data first, then drill down into specifics. Always call 'get_me' first to understand current user permissions and context. PR review workflow: Always use 'create_pending_pull_request_review' → 'add_comment_to_pending_review' → 'submit_pending_pull_request_review' for complex reviews with line-specific comments.",
+            "label": "github-with-instructions",
+            "collectionId": "mcp.config.usrlocal",
+            "definitionId": "mcp.config.usrlocal.github-with-instructions"
+          },
+          "resultDetails": {
+            "input": "{}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "{\"login\":\"dandeliongold\",\"id\":83384332,\"profile_url\":\"https://github.com/dandeliongold\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/83384332?v=4\",\"details\":{\"name\":\"Dandelion Gold\",\"company\":\"Dandelion Gold, LLC\",\"blog\":\"https://www.dandeliongold.com/\",\"location\":\"The Underestimated City, AZ\",\"public_repos\":17,\"public_gists\":2,\"followers\":2,\"following\":2,\"created_at\":\"2021-04-29T02:50:22Z\",\"updated_at\":\"2025-09-14T21:17:20Z\",\"total_private_repos\":7,\"owned_private_repos\":7}}"
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {}
+          },
+          "toolCallId": "5bb4b4ca-8f81-43be-9b16-576c98e29ac2",
+          "toolId": "mcp_github-with-i_get_me"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running Get pull request details",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran Get pull request details ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "originMessage": "github-with-instructions (MCP Server)",
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "github-mcp-server",
+            "instructions": "The GitHub MCP Server provides GitHub API tools. Tool selection guidance: Use 'list_*' tools for broad, simple retrieval and pagination of all items of a type (e.g., all issues, all PRs, all branches) with basic filtering. Use 'search_*' tools for targeted queries with specific criteria, keywords, or complex filters (e.g., issues with certain text, PRs by author, code containing functions). Context management: 1) GitHub API responses can overflow context windows, 2) Process large datasets in batches of 5-10 items, 3) For summarization tasks, fetch minimal data first, then drill down into specifics. Always call 'get_me' first to understand current user permissions and context. PR review workflow: Always use 'create_pending_pull_request_review' → 'add_comment_to_pending_review' → 'submit_pending_pull_request_review' for complex reviews with line-specific comments.",
+            "label": "github-with-instructions",
+            "collectionId": "mcp.config.usrlocal",
+            "definitionId": "mcp.config.usrlocal.github-with-instructions"
+          },
+          "resultDetails": {
+            "input": "{\n  \"owner\": \"olaservo\",\n  \"repo\": \"mcp-server-instructions-demo\",\n  \"pullNumber\": 18\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "{\"id\":2827238812,\"number\":18,\"state\":\"open\",\"locked\":false,\"title\":\"Add comprehensive input validation with detailed error responses\",\"body\":\"## Summary\\n- Added comprehensive input validation middleware for all Todo endpoints\\n- Implemented field-specific error messages with structured error responses  \\n- Added validation for title length, HTML tag prevention, and type checking\\n- Enhanced ID parameter validation for route security\\n- Added comprehensive test coverage for all validation scenarios\\n\\n## Changes Made\\n\\n### New Files\\n- `src/middleware/validation.ts` - Core validation logic with custom error handling\\n- `src/middleware/validation.test.ts` - Comprehensive test suite (15+ test cases)\\n\\n### Modified Files\\n- `src/routes/todos.ts` - Integrated validation middleware, improved error responses\\n- `README.md` - Added validation rules and error response format documentation\\n- `package.json` - Added supertest for API testing\\n\\n### Validation Rules Implemented\\n- **Title**: Required, 1-100 chars, no HTML tags, string type validation\\n- **Description**: Optional, max 500 chars, no HTML tags, string type validation  \\n- **Completed**: Boolean type validation when provided\\n- **ID Parameters**: Positive integer validation for all routes\\n\\n## Test Coverage\\n- Valid input acceptance\\n- Missing required fields\\n- Invalid data types\\n- Length limit enforcement\\n- HTML tag prevention (XSS protection)\\n- Multiple simultaneous errors\\n- Edge cases and boundary conditions\\n\\n## API Response Changes\\n**Before**: Simple error strings\\n```json\\n{ \\\"error\\\": \\\"Title is required\\\" }\\n```\\n\\n**After**: Structured error objects with field details\\n```json\\n{\\n  \\\"error\\\": \\\"Validation failed\\\", \\n  \\\"details\\\": [\\n    { \\\"field\\\": \\\"title\\\", \\\"message\\\": \\\"Title is required\\\" },\\n    { \\\"field\\\": \\\"description\\\", \\\"message\\\": \\\"Description must be 500 characters or less\\\" }\\n  ]\\n}\\n```\\n\\n## Security Improvements\\n- HTML tag prevention to mitigate XSS attacks\\n- Input sanitization with automatic trimming\\n- Type validation to prevent injection attacks\\n- ID format validation to prevent path traversal\\n\\n## Testing Instructions\\n\\n1. **Install dependencies**: `npm install`\\n2. **Run test suite**: `npm test` (should show 15+ passing tests)\\n3. **Test API manually**:\\n   ```bash\\n   npm run dev\\n   \\n   # Test valid creation\\n   curl -X POST localhost:3000/api/todos \\\\\\n     -H \\\"Content-Type: application/json\\\" \\\\\\n     -d '{\\\"title\\\":\\\"Valid Todo\\\",\\\"description\\\":\\\"Valid description\\\"}'\\n   \\n   # Test validation errors\\n   curl -X POST localhost:3000/api/todos \\\\\\n     -H \\\"Content-Type: application/json\\\" \\\\\\n     -d '{\\\"title\\\":\\\"\\\",\\\"description\\\":\\\"'$(printf 'a%.0s' {1..501})'\\\"}'\\n   ```\\n\\n## Breaking Changes\\n**Error response format has changed** - API consumers will need to handle the new structured error format\\n\\n## Future Enhancements\\n- [ ] Add rate limiting validation\\n- [ ] Implement custom validation rules configuration\\n- [ ] Add internationalization for error messages\\n- [ ] Consider adding request sanitization middleware\",\"created_at\":\"2025-09-14T22:28:03Z\",\"updated_at\":\"2025-09-14T22:28:03Z\",\"user\":{\"login\":\"olaservo\",\"id\":16480113,\"node_id\":\"MDQ6VXNlcjE2NDgwMTEz\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/16480113?v=4\",\"html_url\":\"https://github.com/olaservo\",\"gravatar_id\":\"\",\"type\":\"User\",\"site_admin\":false,\"url\":\"https://api.github.com/users/olaservo\",\"events_url\":\"https://api.github.com/users/olaservo/events{/privacy}\",\"following_url\":\"https://api.github.com/users/olaservo/following{/other_user}\",\"followers_url\":\"https://api.github.com/users/olaservo/followers\",\"gists_url\":\"https://api.github.com/users/olaservo/gists{/gist_id}\",\"organizations_url\":\"https://api.github.com/users/olaservo/orgs\",\"received_events_url\":\"https://api.github.com/users/olaservo/received_events\",\"repos_url\":\"https://api.github.com/users/olaservo/repos\",\"starred_url\":\"https://api.github.com/users/olaservo/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/olaservo/subscriptions\"},\"draft\":false,\"url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/18\",\"html_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/pull/18\",\"issue_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/18\",\"statuses_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/statuses/c114caaa650ca7994614478a4b042312b999525c\",\"diff_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/pull/18.diff\",\"patch_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/pull/18.patch\",\"commits_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/18/commits\",\"comments_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/18/comments\",\"review_comments_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/18/comments\",\"review_comment_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/comments{/number}\",\"author_association\":\"OWNER\",\"node_id\":\"PR_kwDOPvuGhM6ohD2c\",\"merged\":false,\"mergeable\":true,\"mergeable_state\":\"clean\",\"rebaseable\":true,\"merge_commit_sha\":\"5dc0a066405120a379e6d5f7c1f6901f7c8ab561\",\"comments\":0,\"commits\":1,\"additions\":550,\"deletions\":17,\"changed_files\":6,\"maintainer_can_modify\":false,\"review_comments\":0,\"_links\":{\"self\":{\"href\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/18\"},\"html\":{\"href\":\"https://github.com/olaservo/mcp-server-instructions-demo/pull/18\"},\"issue\":{\"href\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/18\"},\"comments\":{\"href\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/18/comments\"},\"review_comments\":{\"href\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/18/comments\"},\"review_comment\":{\"href\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/comments{/number}\"},\"commits\":{\"href\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/18/commits\"},\"statuses\":{\"href\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/statuses/c114caaa650ca7994614478a4b042312b999525c\"}},\"head\":{\"label\":\"olaservo:feature/input-validation-enhancement\",\"ref\":\"feature/input-validation-enhancement\",\"sha\":\"c114caaa650ca7994614478a4b042312b999525c\",\"repo\":{\"id\":1056671364,\"node_id\":\"R_kgDOPvuGhA\",\"owner\":{\"login\":\"olaservo\",\"id\":16480113,\"node_id\":\"MDQ6VXNlcjE2NDgwMTEz\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/16480113?v=4\",\"html_url\":\"https://github.com/olaservo\",\"gravatar_id\":\"\",\"type\":\"User\",\"site_admin\":false,\"url\":\"https://api.github.com/users/olaservo\",\"events_url\":\"https://api.github.com/users/olaservo/events{/privacy}\",\"following_url\":\"https://api.github.com/users/olaservo/following{/other_user}\",\"followers_url\":\"https://api.github.com/users/olaservo/followers\",\"gists_url\":\"https://api.github.com/users/olaservo/gists{/gist_id}\",\"organizations_url\":\"https://api.github.com/users/olaservo/orgs\",\"received_events_url\":\"https://api.github.com/users/olaservo/received_events\",\"repos_url\":\"https://api.github.com/users/olaservo/repos\",\"starred_url\":\"https://api.github.com/users/olaservo/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/olaservo/subscriptions\"},\"name\":\"mcp-server-instructions-demo\",\"full_name\":\"olaservo/mcp-server-instructions-demo\",\"description\":\"Repo for demonstrating and evaluating server instructions\",\"default_branch\":\"main\",\"created_at\":\"2025-09-14T15:17:24Z\",\"pushed_at\":\"2025-09-14T22:28:01Z\",\"updated_at\":\"2025-09-14T21:39:36Z\",\"html_url\":\"https://github.com/olaservo/mcp-server-instructions-demo\",\"clone_url\":\"https://github.com/olaservo/mcp-server-instructions-demo.git\",\"git_url\":\"git://github.com/olaservo/mcp-server-instructions-demo.git\",\"ssh_url\":\"git@github.com:olaservo/mcp-server-instructions-demo.git\",\"svn_url\":\"https://github.com/olaservo/mcp-server-instructions-demo\",\"language\":\"Shell\",\"fork\":false,\"forks_count\":0,\"open_issues_count\":1,\"open_issues\":1,\"stargazers_count\":0,\"watchers_count\":0,\"watchers\":0,\"size\":86,\"allow_forking\":true,\"web_commit_signoff_required\":false,\"archived\":false,\"disabled\":false,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"url\":\"https://api.github.com/licenses/mit\",\"spdx_id\":\"MIT\"},\"private\":false,\"has_issues\":true,\"has_wiki\":true,\"has_pages\":false,\"has_projects\":true,\"has_downloads\":true,\"has_discussions\":true,\"is_template\":false,\"url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo\",\"archive_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contributors\",\"deployments_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/deployments\",\"downloads_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/downloads\",\"events_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/events\",\"forks_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/forks\",\"git_commits_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/tags{/sha}\",\"hooks_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/hooks\",\"issue_comment_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/languages\",\"merges_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/merges\",\"milestones_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/releases{/id}\",\"stargazers_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/stargazers\",\"statuses_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/subscribers\",\"subscription_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/subscription\",\"tags_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/tags\",\"trees_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/trees{/sha}\",\"teams_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/teams\",\"visibility\":\"public\"},\"user\":{\"login\":\"olaservo\",\"id\":16480113,\"node_id\":\"MDQ6VXNlcjE2NDgwMTEz\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/16480113?v=4\",\"html_url\":\"https://github.com/olaservo\",\"gravatar_id\":\"\",\"type\":\"User\",\"site_admin\":false,\"url\":\"https://api.github.com/users/olaservo\",\"events_url\":\"https://api.github.com/users/olaservo/events{/privacy}\",\"following_url\":\"https://api.github.com/users/olaservo/following{/other_user}\",\"followers_url\":\"https://api.github.com/users/olaservo/followers\",\"gists_url\":\"https://api.github.com/users/olaservo/gists{/gist_id}\",\"organizations_url\":\"https://api.github.com/users/olaservo/orgs\",\"received_events_url\":\"https://api.github.com/users/olaservo/received_events\",\"repos_url\":\"https://api.github.com/users/olaservo/repos\",\"starred_url\":\"https://api.github.com/users/olaservo/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/olaservo/subscriptions\"}},\"base\":{\"label\":\"olaservo:main\",\"ref\":\"main\",\"sha\":\"e187433b65925d24aa6541e88f12f73843274e38\",\"repo\":{\"id\":1056671364,\"node_id\":\"R_kgDOPvuGhA\",\"owner\":{\"login\":\"olaservo\",\"id\":16480113,\"node_id\":\"MDQ6VXNlcjE2NDgwMTEz\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/16480113?v=4\",\"html_url\":\"https://github.com/olaservo\",\"gravatar_id\":\"\",\"type\":\"User\",\"site_admin\":false,\"url\":\"https://api.github.com/users/olaservo\",\"events_url\":\"https://api.github.com/users/olaservo/events{/privacy}\",\"following_url\":\"https://api.github.com/users/olaservo/following{/other_user}\",\"followers_url\":\"https://api.github.com/users/olaservo/followers\",\"gists_url\":\"https://api.github.com/users/olaservo/gists{/gist_id}\",\"organizations_url\":\"https://api.github.com/users/olaservo/orgs\",\"received_events_url\":\"https://api.github.com/users/olaservo/received_events\",\"repos_url\":\"https://api.github.com/users/olaservo/repos\",\"starred_url\":\"https://api.github.com/users/olaservo/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/olaservo/subscriptions\"},\"name\":\"mcp-server-instructions-demo\",\"full_name\":\"olaservo/mcp-server-instructions-demo\",\"description\":\"Repo for demonstrating and evaluating server instructions\",\"default_branch\":\"main\",\"created_at\":\"2025-09-14T15:17:24Z\",\"pushed_at\":\"2025-09-14T22:28:01Z\",\"updated_at\":\"2025-09-14T21:39:36Z\",\"html_url\":\"https://github.com/olaservo/mcp-server-instructions-demo\",\"clone_url\":\"https://github.com/olaservo/mcp-server-instructions-demo.git\",\"git_url\":\"git://github.com/olaservo/mcp-server-instructions-demo.git\",\"ssh_url\":\"git@github.com:olaservo/mcp-server-instructions-demo.git\",\"svn_url\":\"https://github.com/olaservo/mcp-server-instructions-demo\",\"language\":\"Shell\",\"fork\":false,\"forks_count\":0,\"open_issues_count\":1,\"open_issues\":1,\"stargazers_count\":0,\"watchers_count\":0,\"watchers\":0,\"size\":86,\"allow_forking\":true,\"web_commit_signoff_required\":false,\"archived\":false,\"disabled\":false,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"url\":\"https://api.github.com/licenses/mit\",\"spdx_id\":\"MIT\"},\"private\":false,\"has_issues\":true,\"has_wiki\":true,\"has_pages\":false,\"has_projects\":true,\"has_downloads\":true,\"has_discussions\":true,\"is_template\":false,\"url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo\",\"archive_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contributors\",\"deployments_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/deployments\",\"downloads_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/downloads\",\"events_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/events\",\"forks_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/forks\",\"git_commits_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/tags{/sha}\",\"hooks_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/hooks\",\"issue_comment_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/languages\",\"merges_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/merges\",\"milestones_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/releases{/id}\",\"stargazers_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/stargazers\",\"statuses_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/subscribers\",\"subscription_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/subscription\",\"tags_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/tags\",\"trees_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/trees{/sha}\",\"teams_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/teams\",\"visibility\":\"public\"},\"user\":{\"login\":\"olaservo\",\"id\":16480113,\"node_id\":\"MDQ6VXNlcjE2NDgwMTEz\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/16480113?v=4\",\"html_url\":\"https://github.com/olaservo\",\"gravatar_id\":\"\",\"type\":\"User\",\"site_admin\":false,\"url\":\"https://api.github.com/users/olaservo\",\"events_url\":\"https://api.github.com/users/olaservo/events{/privacy}\",\"following_url\":\"https://api.github.com/users/olaservo/following{/other_user}\",\"followers_url\":\"https://api.github.com/users/olaservo/followers\",\"gists_url\":\"https://api.github.com/users/olaservo/gists{/gist_id}\",\"organizations_url\":\"https://api.github.com/users/olaservo/orgs\",\"received_events_url\":\"https://api.github.com/users/olaservo/received_events\",\"repos_url\":\"https://api.github.com/users/olaservo/repos\",\"starred_url\":\"https://api.github.com/users/olaservo/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/olaservo/subscriptions\"}}}"
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "owner": "olaservo",
+              "repo": "mcp-server-instructions-demo",
+              "pullNumber": 18
+            }
+          },
+          "toolCallId": "e0f58823-9564-4907-afee-62a31c9f5190",
+          "toolId": "mcp_github-with-i_get_pull_request"
+        },
+        {
+          "value": "Now I'll fetch the list of files changed in the PR (first page) and the PR diff so I can review code-level changes. ",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/c:/Users/johnn/OneDrive/Documents/GitHub/olaservo/mcp-server-instructions-demo/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_github-with-i_get_pull_request_files"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running Get pull request files",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran Get pull request files ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "originMessage": "github-with-instructions (MCP Server)",
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "github-mcp-server",
+            "instructions": "The GitHub MCP Server provides GitHub API tools. Tool selection guidance: Use 'list_*' tools for broad, simple retrieval and pagination of all items of a type (e.g., all issues, all PRs, all branches) with basic filtering. Use 'search_*' tools for targeted queries with specific criteria, keywords, or complex filters (e.g., issues with certain text, PRs by author, code containing functions). Context management: 1) GitHub API responses can overflow context windows, 2) Process large datasets in batches of 5-10 items, 3) For summarization tasks, fetch minimal data first, then drill down into specifics. Always call 'get_me' first to understand current user permissions and context. PR review workflow: Always use 'create_pending_pull_request_review' → 'add_comment_to_pending_review' → 'submit_pending_pull_request_review' for complex reviews with line-specific comments.",
+            "label": "github-with-instructions",
+            "collectionId": "mcp.config.usrlocal",
+            "definitionId": "mcp.config.usrlocal.github-with-instructions"
+          },
+          "resultDetails": {
+            "input": "{\n  \"owner\": \"olaservo\",\n  \"repo\": \"mcp-server-instructions-demo\",\n  \"pullNumber\": 18,\n  \"perPage\": 100,\n  \"page\": 1\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "[{\"sha\":\"8c998e5fc0eff6f95158faf136a4d6af793c63c8\",\"filename\":\"README.md\",\"additions\":27,\"deletions\":0,\"changes\":27,\"status\":\"modified\",\"patch\":\"@@ -48,3 +48,30 @@ npm run lint\\n   updatedAt: Date;\\n }\\n ```\\n+\\n+## Validation Rules\\n+\\n+### Creating Todos\\n+- **title**: Required, 1-100 characters, no HTML tags\\n+- **description**: Optional, max 500 characters, no HTML tags\\n+\\n+### Updating Todos\\n+- **title**: Optional, 1-100 characters, no HTML tags (if provided)\\n+- **description**: Optional, max 500 characters, no HTML tags (if provided)  \\n+- **completed**: Optional, must be boolean (if provided)\\n+\\n+### ID Parameters\\n+- Must be positive integers only\\n+\\n+### Error Response Format\\n+```json\\n+{\\n+  \\\"error\\\": \\\"Validation failed\\\",\\n+  \\\"details\\\": [\\n+    {\\n+      \\\"field\\\": \\\"title\\\",\\n+      \\\"message\\\": \\\"Title is required\\\"\\n+    }\\n+  ]\\n+}\\n+```\",\"blob_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/blob/c114caaa650ca7994614478a4b042312b999525c/README.md\",\"raw_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/raw/c114caaa650ca7994614478a4b042312b999525c/README.md\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/README.md?ref=c114caaa650ca7994614478a4b042312b999525c\"},{\"sha\":\"68519061aa4ac622367829e4f985ea8edcb12b77\",\"filename\":\"package-lock.json\",\"additions\":250,\"deletions\":0,\"changes\":250,\"status\":\"modified\",\"patch\":\"@@ -15,11 +15,13 @@\\n         \\\"@types/express\\\": \\\"^4.17.17\\\",\\n         \\\"@types/jest\\\": \\\"^29.5.5\\\",\\n         \\\"@types/node\\\": \\\"^20.6.0\\\",\\n+        \\\"@types/supertest\\\": \\\"^6.0.3\\\",\\n         \\\"@typescript-eslint/eslint-plugin\\\": \\\"^6.7.0\\\",\\n         \\\"@typescript-eslint/parser\\\": \\\"^6.7.0\\\",\\n         \\\"eslint\\\": \\\"^8.49.0\\\",\\n         \\\"jest\\\": \\\"^29.7.0\\\",\\n         \\\"prettier\\\": \\\"^3.0.3\\\",\\n+        \\\"supertest\\\": \\\"^7.1.4\\\",\\n         \\\"ts-jest\\\": \\\"^29.1.1\\\",\\n         \\\"ts-node\\\": \\\"^10.9.1\\\",\\n         \\\"typescript\\\": \\\"^5.2.2\\\"\\n@@ -1173,6 +1175,19 @@\\n         \\\"@jridgewell/sourcemap-codec\\\": \\\"^1.4.14\\\"\\n       }\\n     },\\n+    \\\"node_modules/@noble/hashes\\\": {\\n+      \\\"version\\\": \\\"1.8.0\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/@noble/hashes/-/hashes-1.8.0.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"^14.21.3 || \\u003e=16\\\"\\n+      },\\n+      \\\"funding\\\": {\\n+        \\\"url\\\": \\\"https://paulmillr.com/funding/\\\"\\n+      }\\n+    },\\n     \\\"node_modules/@nodelib/fs.scandir\\\": {\\n       \\\"version\\\": \\\"2.1.5\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz\\\",\\n@@ -1211,6 +1226,16 @@\\n         \\\"node\\\": \\\"\\u003e= 8\\\"\\n       }\\n     },\\n+    \\\"node_modules/@paralleldrive/cuid2\\\": {\\n+      \\\"version\\\": \\\"2.2.2\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/@paralleldrive/cuid2/-/cuid2-2.2.2.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-ZOBkgDwEdoYVlSeRbYYXs0S9MejQofiVYoTbKzy/6GQa39/q5tQU2IX46+shYnUkpEl3wc+J6wRlar7r2EK2xA==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"@noble/hashes\\\": \\\"^1.1.5\\\"\\n+      }\\n+    },\\n     \\\"node_modules/@sinclair/typebox\\\": {\\n       \\\"version\\\": \\\"0.27.8\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/@sinclair/typebox/-/typebox-0.27.8.tgz\\\",\\n@@ -1332,6 +1357,13 @@\\n         \\\"@types/node\\\": \\\"*\\\"\\n       }\\n     },\\n+    \\\"node_modules/@types/cookiejar\\\": {\\n+      \\\"version\\\": \\\"2.1.5\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/@types/cookiejar/-/cookiejar-2.1.5.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-he+DHOWReW0nghN24E1WUqM0efK4kI9oTqDm6XmK8ZPe2djZ90BSNdGnIyCLzCPw7/pogPlGbzI2wHGGmi4O/Q==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\"\\n+    },\\n     \\\"node_modules/@types/express\\\": {\\n       \\\"version\\\": \\\"4.17.23\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/@types/express/-/express-4.17.23.tgz\\\",\\n@@ -1420,6 +1452,13 @@\\n       \\\"dev\\\": true,\\n       \\\"license\\\": \\\"MIT\\\"\\n     },\\n+    \\\"node_modules/@types/methods\\\": {\\n+      \\\"version\\\": \\\"1.1.4\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/@types/methods/-/methods-1.1.4.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-ymXWVrDiCxTBE3+RIrrP533E70eA+9qu7zdWoHuOmGujkYtzf4HQF96b8nwHLqhuf4ykX61IGRIB38CC6/sImQ==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\"\\n+    },\\n     \\\"node_modules/@types/mime\\\": {\\n       \\\"version\\\": \\\"1.3.5\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/@types/mime/-/mime-1.3.5.tgz\\\",\\n@@ -1488,6 +1527,30 @@\\n       \\\"dev\\\": true,\\n       \\\"license\\\": \\\"MIT\\\"\\n     },\\n+    \\\"node_modules/@types/superagent\\\": {\\n+      \\\"version\\\": \\\"8.1.9\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/@types/superagent/-/superagent-8.1.9.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-pTVjI73witn+9ILmoJdajHGW2jkSaOzhiFYF1Rd3EQ94kymLqB9PjD9ISg7WaALC7+dCHT0FGe9T2LktLq/3GQ==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"@types/cookiejar\\\": \\\"^2.1.5\\\",\\n+        \\\"@types/methods\\\": \\\"^1.1.4\\\",\\n+        \\\"@types/node\\\": \\\"*\\\",\\n+        \\\"form-data\\\": \\\"^4.0.0\\\"\\n+      }\\n+    },\\n+    \\\"node_modules/@types/supertest\\\": {\\n+      \\\"version\\\": \\\"6.0.3\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/@types/supertest/-/supertest-6.0.3.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-8WzXq62EXFhJ7QsH3Ocb/iKQ/Ty9ZVWnVzoTKc9tyyFRRF3a74Tk2+TLFgaFFw364Ere+npzHKEJ6ga2LzIL7w==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"@types/methods\\\": \\\"^1.1.4\\\",\\n+        \\\"@types/superagent\\\": \\\"^8.1.0\\\"\\n+      }\\n+    },\\n     \\\"node_modules/@types/yargs\\\": {\\n       \\\"version\\\": \\\"17.0.33\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/@types/yargs/-/yargs-17.0.33.tgz\\\",\\n@@ -1875,6 +1938,20 @@\\n         \\\"node\\\": \\\"\\u003e=8\\\"\\n       }\\n     },\\n+    \\\"node_modules/asap\\\": {\\n+      \\\"version\\\": \\\"2.0.6\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/asap/-/asap-2.0.6.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-BSHWgDSAiKs50o2Re8ppvp3seVHXSRM44cdSsT9FfNEUUZLOGWVCsiWaRPWM1Znn+mqZ1OfVZ3z3DWEzSp7hRA==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\"\\n+    },\\n+    \\\"node_modules/asynckit\\\": {\\n+      \\\"version\\\": \\\"0.4.0\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\"\\n+    },\\n     \\\"node_modules/babel-jest\\\": {\\n       \\\"version\\\": \\\"29.7.0\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/babel-jest/-/babel-jest-29.7.0.tgz\\\",\\n@@ -2326,6 +2403,29 @@\\n       \\\"dev\\\": true,\\n       \\\"license\\\": \\\"MIT\\\"\\n     },\\n+    \\\"node_modules/combined-stream\\\": {\\n+      \\\"version\\\": \\\"1.0.8\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"delayed-stream\\\": \\\"~1.0.0\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e= 0.8\\\"\\n+      }\\n+    },\\n+    \\\"node_modules/component-emitter\\\": {\\n+      \\\"version\\\": \\\"1.3.1\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/component-emitter/-/component-emitter-1.3.1.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-T0+barUSQRTUQASh8bx02dl+DhF54GtIDY13Y3m9oWTklKbb3Wv974meRpeZ3lp1JpLVECWWNHC4vaG2XHXouQ==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"funding\\\": {\\n+        \\\"url\\\": \\\"https://github.com/sponsors/sindresorhus\\\"\\n+      }\\n+    },\\n     \\\"node_modules/concat-map\\\": {\\n       \\\"version\\\": \\\"0.0.1\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz\\\",\\n@@ -2376,6 +2476,13 @@\\n       \\\"integrity\\\": \\\"sha512-QADzlaHc8icV8I7vbaJXJwod9HWYp8uCqf1xa4OfNu1T7JVxQIrUgOWtHdNDtPiywmFbiS12VjotIXLrKM3orQ==\\\",\\n       \\\"license\\\": \\\"MIT\\\"\\n     },\\n+    \\\"node_modules/cookiejar\\\": {\\n+      \\\"version\\\": \\\"2.1.4\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/cookiejar/-/cookiejar-2.1.4.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-LDx6oHrK+PhzLKJU9j5S7/Y3jM/mUHvD/DeI1WQmJn652iPC5Y4TBzC9l+5OMOXlyTTA+SmVUPm0HQUwpD5Jqw==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\"\\n+    },\\n     \\\"node_modules/create-jest\\\": {\\n       \\\"version\\\": \\\"29.7.0\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/create-jest/-/create-jest-29.7.0.tgz\\\",\\n@@ -2470,6 +2577,16 @@\\n         \\\"node\\\": \\\"\\u003e=0.10.0\\\"\\n       }\\n     },\\n+    \\\"node_modules/delayed-stream\\\": {\\n+      \\\"version\\\": \\\"1.0.0\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e=0.4.0\\\"\\n+      }\\n+    },\\n     \\\"node_modules/depd\\\": {\\n       \\\"version\\\": \\\"2.0.0\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/depd/-/depd-2.0.0.tgz\\\",\\n@@ -2499,6 +2616,17 @@\\n         \\\"node\\\": \\\"\\u003e=8\\\"\\n       }\\n     },\\n+    \\\"node_modules/dezalgo\\\": {\\n+      \\\"version\\\": \\\"1.0.4\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/dezalgo/-/dezalgo-1.0.4.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-rXSP0bf+5n0Qonsb+SVVfNfIsimO4HEtmnIpPHY8Q1UCzKlQrDMfdobr8nJOOsRgWCyMRqeSBQzmWUMq7zvVig==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"ISC\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"asap\\\": \\\"^2.0.0\\\",\\n+        \\\"wrappy\\\": \\\"1\\\"\\n+      }\\n+    },\\n     \\\"node_modules/diff\\\": {\\n       \\\"version\\\": \\\"4.0.2\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/diff/-/diff-4.0.2.tgz\\\",\\n@@ -2641,6 +2769,22 @@\\n         \\\"node\\\": \\\"\\u003e= 0.4\\\"\\n       }\\n     },\\n+    \\\"node_modules/es-set-tostringtag\\\": {\\n+      \\\"version\\\": \\\"2.1.0\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/es-set-tostringtag/-/es-set-tostringtag-2.1.0.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-j6vWzfrGVfyXxge+O0x5sh6cvxAog0a/4Rdd2K36zCMV5eJ+/+tOAngRO8cODMNWbVRdVlmGZQL2YS3yR8bIUA==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"es-errors\\\": \\\"^1.3.0\\\",\\n+        \\\"get-intrinsic\\\": \\\"^1.2.6\\\",\\n+        \\\"has-tostringtag\\\": \\\"^1.0.2\\\",\\n+        \\\"hasown\\\": \\\"^2.0.2\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e= 0.4\\\"\\n+      }\\n+    },\\n     \\\"node_modules/escalade\\\": {\\n       \\\"version\\\": \\\"3.2.0\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz\\\",\\n@@ -3030,6 +3174,13 @@\\n       \\\"dev\\\": true,\\n       \\\"license\\\": \\\"MIT\\\"\\n     },\\n+    \\\"node_modules/fast-safe-stringify\\\": {\\n+      \\\"version\\\": \\\"2.1.1\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/fast-safe-stringify/-/fast-safe-stringify-2.1.1.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\"\\n+    },\\n     \\\"node_modules/fastq\\\": {\\n       \\\"version\\\": \\\"1.19.1\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/fastq/-/fastq-1.19.1.tgz\\\",\\n@@ -3148,6 +3299,41 @@\\n       \\\"dev\\\": true,\\n       \\\"license\\\": \\\"ISC\\\"\\n     },\\n+    \\\"node_modules/form-data\\\": {\\n+      \\\"version\\\": \\\"4.0.4\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/form-data/-/form-data-4.0.4.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-KrGhL9Q4zjj0kiUt5OO4Mr/A/jlI2jDYs5eHBpYHPcBEVSiipAvn2Ko2HnPe20rmcuuvMHNdZFp+4IlGTMF0Ow==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"asynckit\\\": \\\"^0.4.0\\\",\\n+        \\\"combined-stream\\\": \\\"^1.0.8\\\",\\n+        \\\"es-set-tostringtag\\\": \\\"^2.1.0\\\",\\n+        \\\"hasown\\\": \\\"^2.0.2\\\",\\n+        \\\"mime-types\\\": \\\"^2.1.12\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e= 6\\\"\\n+      }\\n+    },\\n+    \\\"node_modules/formidable\\\": {\\n+      \\\"version\\\": \\\"3.5.4\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/formidable/-/formidable-3.5.4.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-YikH+7CUTOtP44ZTnUhR7Ic2UASBPOqmaRkRKxRbywPTe5VxF7RRCck4af9wutiZ/QKM5nME9Bie2fFaPz5Gug==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"@paralleldrive/cuid2\\\": \\\"^2.2.2\\\",\\n+        \\\"dezalgo\\\": \\\"^1.0.4\\\",\\n+        \\\"once\\\": \\\"^1.4.0\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e=14.0.0\\\"\\n+      },\\n+      \\\"funding\\\": {\\n+        \\\"url\\\": \\\"https://ko-fi.com/tunnckoCore/commissions\\\"\\n+      }\\n+    },\\n     \\\"node_modules/forwarded\\\": {\\n       \\\"version\\\": \\\"0.2.0\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/forwarded/-/forwarded-0.2.0.tgz\\\",\\n@@ -3443,6 +3629,22 @@\\n         \\\"url\\\": \\\"https://github.com/sponsors/ljharb\\\"\\n       }\\n     },\\n+    \\\"node_modules/has-tostringtag\\\": {\\n+      \\\"version\\\": \\\"1.0.2\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/has-tostringtag/-/has-tostringtag-1.0.2.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-NqADB8VjPFLM2V0VvHUewwwsw0ZWBaIdgo+ieHtK3hasLz4qeCRjYcqfB6AQrBggRKppKF8L52/VqdVsO47Dlw==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"has-symbols\\\": \\\"^1.0.3\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e= 0.4\\\"\\n+      },\\n+      \\\"funding\\\": {\\n+        \\\"url\\\": \\\"https://github.com/sponsors/ljharb\\\"\\n+      }\\n+    },\\n     \\\"node_modules/hasown\\\": {\\n       \\\"version\\\": \\\"2.0.2\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/hasown/-/hasown-2.0.2.tgz\\\",\\n@@ -5710,6 +5912,54 @@\\n         \\\"url\\\": \\\"https://github.com/sponsors/sindresorhus\\\"\\n       }\\n     },\\n+    \\\"node_modules/superagent\\\": {\\n+      \\\"version\\\": \\\"10.2.3\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/superagent/-/superagent-10.2.3.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-y/hkYGeXAj7wUMjxRbB21g/l6aAEituGXM9Rwl4o20+SX3e8YOSV6BxFXl+dL3Uk0mjSL3kCbNkwURm8/gEDig==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"component-emitter\\\": \\\"^1.3.1\\\",\\n+        \\\"cookiejar\\\": \\\"^2.1.4\\\",\\n+        \\\"debug\\\": \\\"^4.3.7\\\",\\n+        \\\"fast-safe-stringify\\\": \\\"^2.1.1\\\",\\n+        \\\"form-data\\\": \\\"^4.0.4\\\",\\n+        \\\"formidable\\\": \\\"^3.5.4\\\",\\n+        \\\"methods\\\": \\\"^1.1.2\\\",\\n+        \\\"mime\\\": \\\"2.6.0\\\",\\n+        \\\"qs\\\": \\\"^6.11.2\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e=14.18.0\\\"\\n+      }\\n+    },\\n+    \\\"node_modules/superagent/node_modules/mime\\\": {\\n+      \\\"version\\\": \\\"2.6.0\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/mime/-/mime-2.6.0.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-USPkMeET31rOMiarsBNIHZKLGgvKc/LrjofAnBlOttf5ajRvqiRA8QsenbcooctK6d6Ts6aqZXBA+XbkKthiQg==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"bin\\\": {\\n+        \\\"mime\\\": \\\"cli.js\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e=4.0.0\\\"\\n+      }\\n+    },\\n+    \\\"node_modules/supertest\\\": {\\n+      \\\"version\\\": \\\"7.1.4\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/supertest/-/supertest-7.1.4.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-tjLPs7dVyqgItVFirHYqe2T+MfWc2VOBQ8QFKKbWTA3PU7liZR8zoSpAi/C1k1ilm9RsXIKYf197oap9wXGVYg==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"methods\\\": \\\"^1.1.2\\\",\\n+        \\\"superagent\\\": \\\"^10.2.3\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e=14.18.0\\\"\\n+      }\\n+    },\\n     \\\"node_modules/supports-color\\\": {\\n       \\\"version\\\": \\\"7.2.0\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz\\\",\",\"blob_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/blob/c114caaa650ca7994614478a4b042312b999525c/package-lock.json\",\"raw_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/raw/c114caaa650ca7994614478a4b042312b999525c/package-lock.json\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/package-lock.json?ref=c114caaa650ca7994614478a4b042312b999525c\"},{\"sha\":\"861bece2d4ce22af43df18aa973ed76c47b24d17\",\"filename\":\"package.json\",\"additions\":10,\"deletions\":2,\"changes\":12,\"status\":\"modified\",\"patch\":\"@@ -12,7 +12,13 @@\\n     \\\"lint:fix\\\": \\\"eslint src --ext .ts --fix\\\",\\n     \\\"format\\\": \\\"prettier --write src/**/*.ts\\\"\\n   },\\n-  \\\"keywords\\\": [\\\"typescript\\\", \\\"express\\\", \\\"todo\\\", \\\"api\\\", \\\"demo\\\"],\\n+  \\\"keywords\\\": [\\n+    \\\"typescript\\\",\\n+    \\\"express\\\",\\n+    \\\"todo\\\",\\n+    \\\"api\\\",\\n+    \\\"demo\\\"\\n+  ],\\n   \\\"author\\\": \\\"\\\",\\n   \\\"license\\\": \\\"MIT\\\",\\n   \\\"dependencies\\\": {\\n@@ -22,13 +28,15 @@\\n     \\\"@types/express\\\": \\\"^4.17.17\\\",\\n     \\\"@types/jest\\\": \\\"^29.5.5\\\",\\n     \\\"@types/node\\\": \\\"^20.6.0\\\",\\n+    \\\"@types/supertest\\\": \\\"^6.0.3\\\",\\n     \\\"@typescript-eslint/eslint-plugin\\\": \\\"^6.7.0\\\",\\n     \\\"@typescript-eslint/parser\\\": \\\"^6.7.0\\\",\\n     \\\"eslint\\\": \\\"^8.49.0\\\",\\n     \\\"jest\\\": \\\"^29.7.0\\\",\\n     \\\"prettier\\\": \\\"^3.0.3\\\",\\n+    \\\"supertest\\\": \\\"^7.1.4\\\",\\n     \\\"ts-jest\\\": \\\"^29.1.1\\\",\\n     \\\"ts-node\\\": \\\"^10.9.1\\\",\\n     \\\"typescript\\\": \\\"^5.2.2\\\"\\n   }\\n-}\\n\\\\ No newline at end of file\\n+}\",\"blob_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/blob/c114caaa650ca7994614478a4b042312b999525c/package.json\",\"raw_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/raw/c114caaa650ca7994614478a4b042312b999525c/package.json\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/package.json?ref=c114caaa650ca7994614478a4b042312b999525c\"},{\"sha\":\"d0160a0359a49c96c73859a947c74aa8c479199f\",\"filename\":\"src/middleware/validation.test.ts\",\"additions\":122,\"deletions\":0,\"changes\":122,\"status\":\"added\",\"patch\":\"@@ -0,0 +1,122 @@\\n+import request from 'supertest';\\n+import express from 'express';\\n+import { validateTodoCreate, validateTodoUpdate, validateTodoId } from './validation';\\n+\\n+const createTestApp = (middleware: any) =\\u003e {\\n+  const app = express();\\n+  app.use(express.json());\\n+  app.use(middleware);\\n+  app.use((req, res) =\\u003e res.status(200).json({ success: true }));\\n+  return app;\\n+};\\n+\\n+describe('Validation Middleware', () =\\u003e {\\n+  describe('validateTodoCreate', () =\\u003e {\\n+    const app = createTestApp(validateTodoCreate);\\n+\\n+    it('should pass with valid data', async () =\\u003e {\\n+      const response = await request(app)\\n+        .post('/')\\n+        .send({ title: 'Valid Title', description: 'Valid description' });\\n+\\n+      expect(response.status).toBe(200);\\n+    });\\n+\\n+    it('should reject missing title', async () =\\u003e {\\n+      const response = await request(app)\\n+        .post('/')\\n+        .send({ description: 'Description without title' });\\n+\\n+      expect(response.status).toBe(400);\\n+      expect(response.body.error).toBe('Validation failed');\\n+      expect(response.body.details).toContainEqual({\\n+        field: 'title',\\n+        message: 'Title is required'\\n+      });\\n+    });\\n+\\n+    it('should reject empty title', async () =\\u003e {\\n+      const response = await request(app)\\n+        .post('/')\\n+        .send({ title: '   ' });\\n+\\n+      expect(response.status).toBe(400);\\n+      expect(response.body.details).toContainEqual({\\n+        field: 'title',\\n+        message: 'Title cannot be empty'\\n+      });\\n+    });\\n+\\n+    it('should reject title with HTML tags', async () =\\u003e {\\n+      const response = await request(app)\\n+        .post('/')\\n+        .send({ title: '\\u003cscript\\u003ealert(\\\"xss\\\")\\u003c/script\\u003e' });\\n+\\n+      expect(response.status).toBe(400);\\n+      expect(response.body.details).toContainEqual({\\n+        field: 'title',\\n+        message: 'Title cannot contain HTML tags'\\n+      });\\n+    });\\n+\\n+    // MISSING TEST: Should verify description HTML validation works consistently with title\\n+\\n+    it('should reject title over 100 characters', async () =\\u003e {\\n+      const longTitle = 'a'.repeat(101);\\n+      const response = await request(app)\\n+        .post('/')\\n+        .send({ title: longTitle });\\n+\\n+      expect(response.status).toBe(400);\\n+      expect(response.body.details).toContainEqual({\\n+        field: 'title',\\n+        message: 'Title must be 100 characters or less'\\n+      });\\n+    });\\n+\\n+    it('should reject description over 500 characters', async () =\\u003e {\\n+      const longDescription = 'a'.repeat(501);\\n+      const response = await request(app)\\n+        .post('/')\\n+        .send({ title: 'Valid Title', description: longDescription });\\n+\\n+      expect(response.status).toBe(400);\\n+      expect(response.body.details).toContainEqual({\\n+        field: 'description',\\n+        message: 'Description must be 500 characters or less'\\n+      });\\n+    });\\n+\\n+    it('should handle multiple validation errors', async () =\\u003e {\\n+      const response = await request(app)\\n+        .post('/')\\n+        .send({ title: '', description: 'a'.repeat(501) });\\n+\\n+      expect(response.status).toBe(400);\\n+      expect(response.body.details).toHaveLength(2);\\n+    });\\n+  });\\n+\\n+  describe('validateTodoId', () =\\u003e {\\n+    const app = express();\\n+    app.use('/:id', validateTodoId);\\n+    app.use((req, res) =\\u003e res.status(200).json({ success: true }));\\n+\\n+    it('should pass with valid numeric ID', async () =\\u003e {\\n+      const response = await request(app).get('/123');\\n+      expect(response.status).toBe(200);\\n+    });\\n+\\n+    it('should reject non-numeric ID', async () =\\u003e {\\n+      const response = await request(app).get('/abc');\\n+      expect(response.status).toBe(400);\\n+      expect(response.body.details).toContainEqual({\\n+        field: 'id',\\n+        message: 'ID must be a positive integer',\\n+        value: 'abc'\\n+      });\\n+    });\\n+\\n+    // MISSING TEST: Should test ID \\\"0\\\" edge case - currently no validation for this\\n+  });\\n+});\",\"blob_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/blob/c114caaa650ca7994614478a4b042312b999525c/src%2Fmiddleware%2Fvalidation.test.ts\",\"raw_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/raw/c114caaa650ca7994614478a4b042312b999525c/src%2Fmiddleware%2Fvalidation.test.ts\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/src%2Fmiddleware%2Fvalidation.test.ts?ref=c114caaa650ca7994614478a4b042312b999525c\"},{\"sha\":\"63b634efdc09275c0c320343090b31e7b03a918c\",\"filename\":\"src/middleware/validation.ts\",\"additions\":112,\"deletions\":0,\"changes\":112,\"status\":\"added\",\"patch\":\"@@ -0,0 +1,112 @@\\n+import { Request, Response, NextFunction } from 'express';\\n+\\n+export interface ValidationError {\\n+  field: string;\\n+  message: string;\\n+  value?: any;\\n+}\\n+\\n+export class ValidationException extends Error {\\n+  public errors: ValidationError[];\\n+\\n+  constructor(errors: ValidationError[]) {\\n+    super('Validation failed');\\n+    this.name = 'ValidationException';\\n+    this.errors = errors;\\n+  }\\n+}\\n+\\n+export const validateTodoCreate = (req: Request, res: Response, next: NextFunction) =\\u003e {\\n+  const errors: ValidationError[] = [];\\n+  const { title, description } = req.body;\\n+\\n+  // Validate title\\n+  if (!title) {\\n+    errors.push({ field: 'title', message: 'Title is required' });\\n+  } else if (typeof title !== 'string') {\\n+    errors.push({ field: 'title', message: 'Title must be a string', value: title });\\n+  } else if (title.trim().length === 0) {\\n+    errors.push({ field: 'title', message: 'Title cannot be empty' });\\n+  } else if (title.length \\u003e 100) {\\n+    errors.push({ field: 'title', message: 'Title must be 100 characters or less' });\\n+  } else if (/\\u003c[^\\u003e]*\\u003e/g.test(title)) {\\n+    errors.push({ field: 'title', message: 'Title cannot contain HTML tags' });\\n+  }\\n+\\n+  // Validate description\\n+  if (description !== undefined \\u0026\\u0026 description !== null) {\\n+    if (typeof description !== 'string') {\\n+      errors.push({ field: 'description', message: 'Description must be a string', value: description });\\n+    } else if (description.length \\u003e 500) {\\n+      errors.push({ field: 'description', message: 'Description must be 500 characters or less' });\\n+    } else if (/\\u003c.*\\u003e/g.test(description)) {  // BUG: Inconsistent regex - allows \\u003cimg\\u003e but title rejects it\\n+      errors.push({ field: 'description', message: 'Description cannot contain HTML tags' });\\n+    }\\n+  }\\n+\\n+  if (errors.length \\u003e 0) {\\n+    return res.status(400).json({\\n+      error: 'Validation failed',\\n+      details: errors\\n+    });\\n+  }\\n+\\n+  next();\\n+};\\n+\\n+export const validateTodoUpdate = (req: Request, res: Response, next: NextFunction) =\\u003e {\\n+  const errors: ValidationError[] = [];\\n+  const { title, description, completed } = req.body;\\n+\\n+  // Validate title if provided\\n+  if (title !== undefined) {\\n+    if (typeof title !== 'string') {\\n+      errors.push({ field: 'title', message: 'Title must be a string', value: title });\\n+    } else if (title.trim().length === 0) {\\n+      errors.push({ field: 'title', message: 'Title cannot be empty' });\\n+    } else if (title.length \\u003e 100) {\\n+      errors.push({ field: 'title', message: 'Title must be 100 characters or less' });\\n+    } else if (/\\u003c[^\\u003e]*\\u003e/g.test(title)) {\\n+      errors.push({ field: 'title', message: 'Title cannot contain HTML tags' });\\n+    }\\n+  }\\n+\\n+  // Validate description if provided\\n+  if (description !== undefined \\u0026\\u0026 description !== null) {\\n+    if (typeof description !== 'string') {\\n+      errors.push({ field: 'description', message: 'Description must be a string', value: description });\\n+    } else if (description.length \\u003e 500) {\\n+      errors.push({ field: 'description', message: 'Description must be 500 characters or less' });\\n+    } else if (/\\u003c[^\\u003e]*\\u003e/g.test(description)) {\\n+      errors.push({ field: 'description', message: 'Description cannot contain HTML tags' });\\n+    }\\n+  }\\n+\\n+  // Validate completed if provided\\n+  if (completed !== undefined \\u0026\\u0026 typeof completed !== 'boolean') {\\n+    errors.push({ field: 'completed', message: 'Completed must be a boolean', value: completed });\\n+  }\\n+\\n+  if (errors.length \\u003e 0) {\\n+    return res.status(400).json({\\n+      error: 'Validation failed',\\n+      details: errors\\n+    });\\n+  }\\n+\\n+  next();\\n+};\\n+\\n+export const validateTodoId = (req: Request, res: Response, next: NextFunction) =\\u003e {\\n+  const { id } = req.params;\\n+\\n+  if (!id || !/^\\\\d+$/.test(id)) {\\n+    return res.status(400).json({\\n+      error: 'Invalid ID format',\\n+      details: [{ field: 'id', message: 'ID must be a positive integer', value: id }]\\n+    });\\n+  }\\n+\\n+  // BUG: This allows ID \\\"0\\\" which may not be valid depending on our ID generation strategy\\n+  next();\\n+};\",\"blob_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/blob/c114caaa650ca7994614478a4b042312b999525c/src%2Fmiddleware%2Fvalidation.ts\",\"raw_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/raw/c114caaa650ca7994614478a4b042312b999525c/src%2Fmiddleware%2Fvalidation.ts\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/src%2Fmiddleware%2Fvalidation.ts?ref=c114caaa650ca7994614478a4b042312b999525c\"},{\"sha\":\"f6bbad312713f3a6a2ccfbee195e502fdd48343a\",\"filename\":\"src/routes/todos.ts\",\"additions\":29,\"deletions\":15,\"changes\":44,\"status\":\"modified\",\"patch\":\"@@ -1,6 +1,7 @@\\n import { Request, Response, Router } from 'express';\\n import { todoStore } from '../store/todoStore';\\n import { CreateTodoRequest, UpdateTodoRequest } from '../types/todo';\\n+import { validateTodoCreate, validateTodoUpdate, validateTodoId } from '../middleware/validation';\\n \\n const router = Router();\\n \\n@@ -9,54 +10,67 @@ router.get('/', (req: Request, res: Response) =\\u003e {\\n   res.json(todos);\\n });\\n \\n-router.get('/:id', (req: Request, res: Response) =\\u003e {\\n+router.get('/:id', validateTodoId, (req: Request, res: Response) =\\u003e {\\n   const { id } = req.params;\\n   const todo = todoStore.getById(id);\\n   \\n   if (!todo) {\\n-    return res.status(404).json({ error: 'Todo not found' });\\n+    return res.status(404).json({ \\n+      error: 'Todo not found',\\n+      details: [{ field: 'id', message: `Todo with ID ${id} does not exist`, value: id }]\\n+    });\\n   }\\n   \\n   res.json(todo);\\n });\\n \\n-router.post('/', (req: Request, res: Response) =\\u003e {\\n+router.post('/', validateTodoCreate, (req: Request, res: Response) =\\u003e {\\n   const { title, description }: CreateTodoRequest = req.body;\\n   \\n-  if (!title || title.trim() === '') {\\n-    return res.status(400).json({ error: 'Title is required' });\\n-  }\\n-  \\n-  const todo = todoStore.create({ title: title.trim(), description });\\n+  // BUG: No try-catch block - if todoStore.create throws, server will crash\\n+  const todo = todoStore.create({ \\n+    title: title.trim(), \\n+    description: description?.trim() || undefined \\n+  });\\n   res.status(201).json(todo);\\n });\\n \\n-router.put('/:id', (req: Request, res: Response) =\\u003e {\\n+router.put('/:id', validateTodoId, validateTodoUpdate, (req: Request, res: Response) =\\u003e {\\n   const { id } = req.params;\\n   const updates: UpdateTodoRequest = req.body;\\n   \\n-  if (updates.title !== undefined \\u0026\\u0026 updates.title.trim() === '') {\\n-    return res.status(400).json({ error: 'Title cannot be empty' });\\n+  // Trim string values\\n+  if (updates.title) {\\n+    updates.title = updates.title.trim();\\n+  }\\n+  if (updates.description) {\\n+    updates.description = updates.description.trim();\\n   }\\n   \\n   const updatedTodo = todoStore.update(id, updates);\\n   \\n   if (!updatedTodo) {\\n-    return res.status(404).json({ error: 'Todo not found' });\\n+    return res.status(404).json({ \\n+      error: 'Todo not found',\\n+      details: [{ field: 'id', message: `Todo with ID ${id} does not exist`, value: id }]\\n+    });\\n   }\\n   \\n   res.json(updatedTodo);\\n });\\n \\n-router.delete('/:id', (req: Request, res: Response) =\\u003e {\\n+router.delete('/:id', validateTodoId, (req: Request, res: Response) =\\u003e {\\n   const { id } = req.params;\\n   const deleted = todoStore.delete(id);\\n   \\n   if (!deleted) {\\n-    return res.status(404).json({ error: 'Todo not found' });\\n+    return res.status(404).json({ \\n+      error: 'Todo not found',\\n+      details: [{ field: 'id', message: `Todo with ID ${id} does not exist`, value: id }]\\n+    });\\n   }\\n   \\n   res.status(204).send();\\n });\\n \\n-export { router as todoRoutes };\\n\\\\ No newline at end of file\\n+export { router as todoRoutes };\",\"blob_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/blob/c114caaa650ca7994614478a4b042312b999525c/src%2Froutes%2Ftodos.ts\",\"raw_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/raw/c114caaa650ca7994614478a4b042312b999525c/src%2Froutes%2Ftodos.ts\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/src%2Froutes%2Ftodos.ts?ref=c114caaa650ca7994614478a4b042312b999525c\"}]"
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "owner": "olaservo",
+              "repo": "mcp-server-instructions-demo",
+              "pullNumber": 18,
+              "perPage": 100,
+              "page": 1
+            }
+          },
+          "toolCallId": "60e05627-1644-45a4-bc83-8ab4cf187fff",
+          "toolId": "mcp_github-with-i_get_pull_request_files"
+        },
+        {
+          "value": "Creating a pending review and adding focused file-level comments about the validation bugs, test issues, and API changes — then I'll submit the review requesting changes. ",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/c:/Users/johnn/OneDrive/Documents/GitHub/olaservo/mcp-server-instructions-demo/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_github-with-i_create_pending_pull_request_review"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running Create pending pull request review",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran Create pending pull request review ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "originMessage": "github-with-instructions (MCP Server)",
+          "isConfirmed": {
+            "type": 3,
+            "scope": "profile"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "github-mcp-server",
+            "instructions": "The GitHub MCP Server provides GitHub API tools. Tool selection guidance: Use 'list_*' tools for broad, simple retrieval and pagination of all items of a type (e.g., all issues, all PRs, all branches) with basic filtering. Use 'search_*' tools for targeted queries with specific criteria, keywords, or complex filters (e.g., issues with certain text, PRs by author, code containing functions). Context management: 1) GitHub API responses can overflow context windows, 2) Process large datasets in batches of 5-10 items, 3) For summarization tasks, fetch minimal data first, then drill down into specifics. Always call 'get_me' first to understand current user permissions and context. PR review workflow: Always use 'create_pending_pull_request_review' → 'add_comment_to_pending_review' → 'submit_pending_pull_request_review' for complex reviews with line-specific comments.",
+            "label": "github-with-instructions",
+            "collectionId": "mcp.config.usrlocal",
+            "definitionId": "mcp.config.usrlocal.github-with-instructions"
+          },
+          "resultDetails": {
+            "input": "{\n  \"owner\": \"olaservo\",\n  \"repo\": \"mcp-server-instructions-demo\",\n  \"pullNumber\": 18\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "pending pull request created"
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "owner": "olaservo",
+              "repo": "mcp-server-instructions-demo",
+              "pullNumber": 18
+            }
+          },
+          "toolCallId": "0a8e8eb9-4b39-481b-9a68-9585abf12964",
+          "toolId": "mcp_github-with-i_create_pending_pull_request_review"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running Add review comment to the requester's latest pending pull request review",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran Add review comment to the requester's latest pending pull request review ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "originMessage": "github-with-instructions (MCP Server)",
+          "isConfirmed": {
+            "type": 3,
+            "scope": "profile"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "github-mcp-server",
+            "instructions": "The GitHub MCP Server provides GitHub API tools. Tool selection guidance: Use 'list_*' tools for broad, simple retrieval and pagination of all items of a type (e.g., all issues, all PRs, all branches) with basic filtering. Use 'search_*' tools for targeted queries with specific criteria, keywords, or complex filters (e.g., issues with certain text, PRs by author, code containing functions). Context management: 1) GitHub API responses can overflow context windows, 2) Process large datasets in batches of 5-10 items, 3) For summarization tasks, fetch minimal data first, then drill down into specifics. Always call 'get_me' first to understand current user permissions and context. PR review workflow: Always use 'create_pending_pull_request_review' → 'add_comment_to_pending_review' → 'submit_pending_pull_request_review' for complex reviews with line-specific comments.",
+            "label": "github-with-instructions",
+            "collectionId": "mcp.config.usrlocal",
+            "definitionId": "mcp.config.usrlocal.github-with-instructions"
+          },
+          "resultDetails": {
+            "input": "{\n  \"owner\": \"olaservo\",\n  \"repo\": \"mcp-server-instructions-demo\",\n  \"pullNumber\": 18,\n  \"body\": \"`src/middleware/validation.ts` — Validation regex inconsistency\\n\\n- The title HTML-detection uses `/\\\\u003c[^\\\\u003e]*\\\\u003e/g` while description originally used `/\\\\u003c.*\\\\u003e/g` in an earlier version. Please use a single well-tested regex for both to avoid false negatives and ensure consistency (e.g. `/\\\\u003c[^>]+>/g`).\\n\\n`src/middleware/validation.ts` — Description HTML check comment/BUG\\n\\n- There's a comment that the regex is inconsistent and may allow tags like `<img>`. The code still contains `/\\\\u003c.*\\\\u003e/g` in one place — please unify and add unit tests covering various tag shapes (`<script>`, `<img />`, `<div attr=\\\\\\\"x\\\\\\\">`, malformed tags).\\n\\n`src/middleware/validation.ts` — ID \\\"0\\\" edge case\\n\\n- `validateTodoId` accepts `\\\"0\\\"`. If your ID generation uses positive integers starting at `1`, treat `0` as invalid. Update validation or document why `0` is allowed.\\n\\n`src/routes/todos.ts` — Missing try/catch around store create\\n\\n- `todoStore.create` may throw; the new code comments that this is a bug but doesn't handle it. Wrap store calls in try/catch and return a `500` with a generic error message or let an error handler middleware map store errors to responses.\\n\\n`src/middleware/validation.test.ts` — Test gaps and TODO comments\\n\\n- The test file includes inline comments like `MISSING TEST` — please either add the tests or remove the TODOs. Specifically add a test for description HTML validation and the `id === \\\"0\\\"` edge case.\\n\\n`src/middleware/validation.test.ts` — Test app setup uses middleware as global\\n\\n- `createTestApp` applies the middleware globally which is fine, but for `validateTodoId` testing you instead mount it on `/:id` — keep patterns consistent for clarity.\\n\\n`src/routes/todos.ts` — Response shape change\\n\\n- You changed 404 responses to include a `details` array. This is a breaking change; ensure README and changelog mention it and consider version bump. Also update any API consumers/docs accordingly.\",\n  \"path\": \"src/middleware/validation.ts\",\n  \"line\": 1,\n  \"side\": \"RIGHT\",\n  \"startLine\": 1,\n  \"subjectType\": \"FILE\"\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "pull request review comment successfully added to pending review"
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "owner": "olaservo",
+              "repo": "mcp-server-instructions-demo",
+              "pullNumber": 18,
+              "body": "`src/middleware/validation.ts` — Validation regex inconsistency\n\n- The title HTML-detection uses `/\\u003c[^\\u003e]*\\u003e/g` while description originally used `/\\u003c.*\\u003e/g` in an earlier version. Please use a single well-tested regex for both to avoid false negatives and ensure consistency (e.g. `/\\u003c[^>]+>/g`).\n\n`src/middleware/validation.ts` — Description HTML check comment/BUG\n\n- There's a comment that the regex is inconsistent and may allow tags like `<img>`. The code still contains `/\\u003c.*\\u003e/g` in one place — please unify and add unit tests covering various tag shapes (`<script>`, `<img />`, `<div attr=\\\"x\\\">`, malformed tags).\n\n`src/middleware/validation.ts` — ID \"0\" edge case\n\n- `validateTodoId` accepts `\"0\"`. If your ID generation uses positive integers starting at `1`, treat `0` as invalid. Update validation or document why `0` is allowed.\n\n`src/routes/todos.ts` — Missing try/catch around store create\n\n- `todoStore.create` may throw; the new code comments that this is a bug but doesn't handle it. Wrap store calls in try/catch and return a `500` with a generic error message or let an error handler middleware map store errors to responses.\n\n`src/middleware/validation.test.ts` — Test gaps and TODO comments\n\n- The test file includes inline comments like `MISSING TEST` — please either add the tests or remove the TODOs. Specifically add a test for description HTML validation and the `id === \"0\"` edge case.\n\n`src/middleware/validation.test.ts` — Test app setup uses middleware as global\n\n- `createTestApp` applies the middleware globally which is fine, but for `validateTodoId` testing you instead mount it on `/:id` — keep patterns consistent for clarity.\n\n`src/routes/todos.ts` — Response shape change\n\n- You changed 404 responses to include a `details` array. This is a breaking change; ensure README and changelog mention it and consider version bump. Also update any API consumers/docs accordingly.",
+              "path": "src/middleware/validation.ts",
+              "line": 1,
+              "side": "RIGHT",
+              "startLine": 1,
+              "subjectType": "FILE"
+            }
+          },
+          "toolCallId": "12903d4a-97a0-404b-81ac-8390f8fec2d9",
+          "toolId": "mcp_github-with-i_add_comment_to_pending_review"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running Add review comment to the requester's latest pending pull request review",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran Add review comment to the requester's latest pending pull request review ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "originMessage": "github-with-instructions (MCP Server)",
+          "isConfirmed": {
+            "type": 3,
+            "scope": "profile"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "github-mcp-server",
+            "instructions": "The GitHub MCP Server provides GitHub API tools. Tool selection guidance: Use 'list_*' tools for broad, simple retrieval and pagination of all items of a type (e.g., all issues, all PRs, all branches) with basic filtering. Use 'search_*' tools for targeted queries with specific criteria, keywords, or complex filters (e.g., issues with certain text, PRs by author, code containing functions). Context management: 1) GitHub API responses can overflow context windows, 2) Process large datasets in batches of 5-10 items, 3) For summarization tasks, fetch minimal data first, then drill down into specifics. Always call 'get_me' first to understand current user permissions and context. PR review workflow: Always use 'create_pending_pull_request_review' → 'add_comment_to_pending_review' → 'submit_pending_pull_request_review' for complex reviews with line-specific comments.",
+            "label": "github-with-instructions",
+            "collectionId": "mcp.config.usrlocal",
+            "definitionId": "mcp.config.usrlocal.github-with-instructions"
+          },
+          "resultDetails": {
+            "input": "{\n  \"owner\": \"olaservo\",\n  \"repo\": \"mcp-server-instructions-demo\",\n  \"pullNumber\": 18,\n  \"body\": \"`src/middleware/validation.ts` — ValidationException class exists but is unused\\n\\n- `ValidationException` is defined but never thrown or passed to `next()`. Consider using it with `next(new ValidationException(errors))` and adding centralized error-handling middleware to format errors consistently across the app.\",\n  \"path\": \"src/middleware/validation.ts\",\n  \"line\": 1,\n  \"side\": \"RIGHT\",\n  \"startLine\": 1,\n  \"subjectType\": \"FILE\"\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "pull request review comment successfully added to pending review"
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "owner": "olaservo",
+              "repo": "mcp-server-instructions-demo",
+              "pullNumber": 18,
+              "body": "`src/middleware/validation.ts` — ValidationException class exists but is unused\n\n- `ValidationException` is defined but never thrown or passed to `next()`. Consider using it with `next(new ValidationException(errors))` and adding centralized error-handling middleware to format errors consistently across the app.",
+              "path": "src/middleware/validation.ts",
+              "line": 1,
+              "side": "RIGHT",
+              "startLine": 1,
+              "subjectType": "FILE"
+            }
+          },
+          "toolCallId": "5a8dc8c0-03a9-4dcf-b54e-bf74a7aa3d28",
+          "toolId": "mcp_github-with-i_add_comment_to_pending_review"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running Add review comment to the requester's latest pending pull request review",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran Add review comment to the requester's latest pending pull request review ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "originMessage": "github-with-instructions (MCP Server)",
+          "isConfirmed": {
+            "type": 3,
+            "scope": "profile"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "github-mcp-server",
+            "instructions": "The GitHub MCP Server provides GitHub API tools. Tool selection guidance: Use 'list_*' tools for broad, simple retrieval and pagination of all items of a type (e.g., all issues, all PRs, all branches) with basic filtering. Use 'search_*' tools for targeted queries with specific criteria, keywords, or complex filters (e.g., issues with certain text, PRs by author, code containing functions). Context management: 1) GitHub API responses can overflow context windows, 2) Process large datasets in batches of 5-10 items, 3) For summarization tasks, fetch minimal data first, then drill down into specifics. Always call 'get_me' first to understand current user permissions and context. PR review workflow: Always use 'create_pending_pull_request_review' → 'add_comment_to_pending_review' → 'submit_pending_pull_request_review' for complex reviews with line-specific comments.",
+            "label": "github-with-instructions",
+            "collectionId": "mcp.config.usrlocal",
+            "definitionId": "mcp.config.usrlocal.github-with-instructions"
+          },
+          "resultDetails": {
+            "input": "{\n  \"owner\": \"olaservo\",\n  \"repo\": \"mcp-server-instructions-demo\",\n  \"pullNumber\": 18,\n  \"body\": \"`src/middleware/validation.test.ts` — Assertion strictness\\n\\n- Many tests assert `response.status` and look for one error object in `details`. Add assertions for other properties (`error` string, absence/presence of other fields) and validate `Content-Type` header to ensure consistent API behavior. Also consider using snapshot tests for error payloads to avoid brittle object ordering mistakes.\",\n  \"path\": \"src/middleware/validation.test.ts\",\n  \"line\": 1,\n  \"side\": \"RIGHT\",\n  \"startLine\": 1,\n  \"subjectType\": \"FILE\"\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "pull request review comment successfully added to pending review"
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "owner": "olaservo",
+              "repo": "mcp-server-instructions-demo",
+              "pullNumber": 18,
+              "body": "`src/middleware/validation.test.ts` — Assertion strictness\n\n- Many tests assert `response.status` and look for one error object in `details`. Add assertions for other properties (`error` string, absence/presence of other fields) and validate `Content-Type` header to ensure consistent API behavior. Also consider using snapshot tests for error payloads to avoid brittle object ordering mistakes.",
+              "path": "src/middleware/validation.test.ts",
+              "line": 1,
+              "side": "RIGHT",
+              "startLine": 1,
+              "subjectType": "FILE"
+            }
+          },
+          "toolCallId": "6e798196-117d-42dc-b3c7-3fddfc4a05d9",
+          "toolId": "mcp_github-with-i_add_comment_to_pending_review"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running Add review comment to the requester's latest pending pull request review",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran Add review comment to the requester's latest pending pull request review ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "originMessage": "github-with-instructions (MCP Server)",
+          "isConfirmed": {
+            "type": 3,
+            "scope": "profile"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "github-mcp-server",
+            "instructions": "The GitHub MCP Server provides GitHub API tools. Tool selection guidance: Use 'list_*' tools for broad, simple retrieval and pagination of all items of a type (e.g., all issues, all PRs, all branches) with basic filtering. Use 'search_*' tools for targeted queries with specific criteria, keywords, or complex filters (e.g., issues with certain text, PRs by author, code containing functions). Context management: 1) GitHub API responses can overflow context windows, 2) Process large datasets in batches of 5-10 items, 3) For summarization tasks, fetch minimal data first, then drill down into specifics. Always call 'get_me' first to understand current user permissions and context. PR review workflow: Always use 'create_pending_pull_request_review' → 'add_comment_to_pending_review' → 'submit_pending_pull_request_review' for complex reviews with line-specific comments.",
+            "label": "github-with-instructions",
+            "collectionId": "mcp.config.usrlocal",
+            "definitionId": "mcp.config.usrlocal.github-with-instructions"
+          },
+          "resultDetails": {
+            "input": "{\n  \"owner\": \"olaservo\",\n  \"repo\": \"mcp-server-instructions-demo\",\n  \"pullNumber\": 18,\n  \"body\": \"`src/routes/todos.ts` — Trimming and optional chaining\\n\\n- Good improvement trimming inputs. Be careful: `if (updates.title) { updates.title = updates.title.trim(); }` will skip trimming when title is an empty string (already validated earlier), but using `typeof updates.title === 'string'` may be clearer. Also prefer not to mutate `req.body` directly; clone into a local `const trimmed = { ...updates }` to keep handlers pure.\",\n  \"path\": \"src/routes/todos.ts\",\n  \"line\": 1,\n  \"side\": \"RIGHT\",\n  \"startLine\": 1,\n  \"subjectType\": \"FILE\"\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "pull request review comment successfully added to pending review"
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "owner": "olaservo",
+              "repo": "mcp-server-instructions-demo",
+              "pullNumber": 18,
+              "body": "`src/routes/todos.ts` — Trimming and optional chaining\n\n- Good improvement trimming inputs. Be careful: `if (updates.title) { updates.title = updates.title.trim(); }` will skip trimming when title is an empty string (already validated earlier), but using `typeof updates.title === 'string'` may be clearer. Also prefer not to mutate `req.body` directly; clone into a local `const trimmed = { ...updates }` to keep handlers pure.",
+              "path": "src/routes/todos.ts",
+              "line": 1,
+              "side": "RIGHT",
+              "startLine": 1,
+              "subjectType": "FILE"
+            }
+          },
+          "toolCallId": "d5382f8f-d1c5-4da9-83d2-d9f8341f914d",
+          "toolId": "mcp_github-with-i_add_comment_to_pending_review"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running Add review comment to the requester's latest pending pull request review",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran Add review comment to the requester's latest pending pull request review ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "originMessage": "github-with-instructions (MCP Server)",
+          "isConfirmed": {
+            "type": 3,
+            "scope": "profile"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "github-mcp-server",
+            "instructions": "The GitHub MCP Server provides GitHub API tools. Tool selection guidance: Use 'list_*' tools for broad, simple retrieval and pagination of all items of a type (e.g., all issues, all PRs, all branches) with basic filtering. Use 'search_*' tools for targeted queries with specific criteria, keywords, or complex filters (e.g., issues with certain text, PRs by author, code containing functions). Context management: 1) GitHub API responses can overflow context windows, 2) Process large datasets in batches of 5-10 items, 3) For summarization tasks, fetch minimal data first, then drill down into specifics. Always call 'get_me' first to understand current user permissions and context. PR review workflow: Always use 'create_pending_pull_request_review' → 'add_comment_to_pending_review' → 'submit_pending_pull_request_review' for complex reviews with line-specific comments.",
+            "label": "github-with-instructions",
+            "collectionId": "mcp.config.usrlocal",
+            "definitionId": "mcp.config.usrlocal.github-with-instructions"
+          },
+          "resultDetails": {
+            "input": "{\n  \"owner\": \"olaservo\",\n  \"repo\": \"mcp-server-instructions-demo\",\n  \"pullNumber\": 18,\n  \"body\": \"`package.json` / `package-lock.json` — Dev deps added\\n\\n- Adding `supertest` is fine for tests, but avoid committing `package-lock.json` noise if not necessary. Ensure `npm install` on CI picks up the same versions; consider updating `README.md` to list `npm ci` as the deterministic install command for CI.\\n\\n`README.md` — Error response format\\n\\n- README documents the new structured error format. Call out this is a breaking change near the top and mention migration guidance for API clients (simple examples for mapping previous `error` string to the new format).\",\n  \"path\": \"package.json\",\n  \"line\": 1,\n  \"side\": \"RIGHT\",\n  \"startLine\": 1,\n  \"subjectType\": \"FILE\"\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "pull request review comment successfully added to pending review"
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "owner": "olaservo",
+              "repo": "mcp-server-instructions-demo",
+              "pullNumber": 18,
+              "body": "`package.json` / `package-lock.json` — Dev deps added\n\n- Adding `supertest` is fine for tests, but avoid committing `package-lock.json` noise if not necessary. Ensure `npm install` on CI picks up the same versions; consider updating `README.md` to list `npm ci` as the deterministic install command for CI.\n\n`README.md` — Error response format\n\n- README documents the new structured error format. Call out this is a breaking change near the top and mention migration guidance for API clients (simple examples for mapping previous `error` string to the new format).",
+              "path": "package.json",
+              "line": 1,
+              "side": "RIGHT",
+              "startLine": 1,
+              "subjectType": "FILE"
+            }
+          },
+          "toolCallId": "e7d1b47b-fe5b-4a33-9a95-7e26af360299",
+          "toolId": "mcp_github-with-i_add_comment_to_pending_review"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running Submit the requester's latest pending pull request review",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran Submit the requester's latest pending pull request review ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          },
+          "originMessage": "github-with-instructions (MCP Server)",
+          "isConfirmed": {
+            "type": 3,
+            "scope": "profile"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "github-mcp-server",
+            "instructions": "The GitHub MCP Server provides GitHub API tools. Tool selection guidance: Use 'list_*' tools for broad, simple retrieval and pagination of all items of a type (e.g., all issues, all PRs, all branches) with basic filtering. Use 'search_*' tools for targeted queries with specific criteria, keywords, or complex filters (e.g., issues with certain text, PRs by author, code containing functions). Context management: 1) GitHub API responses can overflow context windows, 2) Process large datasets in batches of 5-10 items, 3) For summarization tasks, fetch minimal data first, then drill down into specifics. Always call 'get_me' first to understand current user permissions and context. PR review workflow: Always use 'create_pending_pull_request_review' → 'add_comment_to_pending_review' → 'submit_pending_pull_request_review' for complex reviews with line-specific comments.",
+            "label": "github-with-instructions",
+            "collectionId": "mcp.config.usrlocal",
+            "definitionId": "mcp.config.usrlocal.github-with-instructions"
+          },
+          "resultDetails": {
+            "input": "{\n  \"owner\": \"olaservo\",\n  \"repo\": \"mcp-server-instructions-demo\",\n  \"pullNumber\": 18,\n  \"event\": \"REQUEST_CHANGES\",\n  \"body\": \"Thanks — overall this adds useful validation and coverage, but I found several issues that need addressing before merging:\\n\\n- Unify HTML-detection regex and add tests for various tag forms.\\n- Handle ID `0` case or document why it’s allowed.\\n- Use or remove the unused `ValidationException` class; prefer `next()`-based errors and centralized error middleware.\\n- Add try/catch around store operations to avoid crashing the server.\\n- Fill missing tests noted in test file and strengthen assertions.\\n- Consider immutability when trimming `req.body` fields.\\n- Document breaking response changes clearly and consider versioning.\\n\\nI left file-level comments with more details. After these are addressed I’ll re-review and approve.\"\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "pending pull request review successfully submitted"
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "owner": "olaservo",
+              "repo": "mcp-server-instructions-demo",
+              "pullNumber": 18,
+              "event": "REQUEST_CHANGES",
+              "body": "Thanks — overall this adds useful validation and coverage, but I found several issues that need addressing before merging:\n\n- Unify HTML-detection regex and add tests for various tag forms.\n- Handle ID `0` case or document why it’s allowed.\n- Use or remove the unused `ValidationException` class; prefer `next()`-based errors and centralized error middleware.\n- Add try/catch around store operations to avoid crashing the server.\n- Fill missing tests noted in test file and strengthen assertions.\n- Consider immutability when trimming `req.body` fields.\n- Document breaking response changes clearly and consider versioning.\n\nI left file-level comments with more details. After these are addressed I’ll re-review and approve."
+            }
+          },
+          "toolCallId": "446d3cee-2bd2-426d-a0e3-3cbb5759a3c6",
+          "toolId": "mcp_github-with-i_submit_pending_pull_request_review"
+        },
+        {
+          "value": "I've reviewed PR #18 and submitted a request-for-changes review with file-level comments.\n\n**What I did (quick summary)**\n- Fetched your GitHub identity and PR details.\n- Retrieved changed files and the unified diff for PR #18.\n- Created a pending review, added targeted comments on the new validation code, tests, routes, and package changes.\n- Submitted the review as `REQUEST_CHANGES` with a summary of required fixes.\n\n**Main issues I raised**\n- **HTML-detection regex inconsistency:** Use a single tested regex for both `title` and `description` to avoid false negatives (e.g., `<img/>`, `<div attr=\"x\">`).\n- **ID \"0\" edge case:** `validateTodoId` currently allows `\"0\"`; decide whether `0` should be valid and enforce that consistently.\n- **Unused ValidationException:** Either use it with `next(new ValidationException(errors))` and centralized error middleware, or remove it.\n- **Missing try/catch around store operations:** `todoStore.create` (and other store calls) may throw — add try/catch and handle errors instead of letting the server crash.\n- **Tests contain TODOs / missing cases:** Add the tests mentioned in comments (description HTML validation, `id === \"0\"` edge case) and strengthen assertions (error string, content-type, snapshots).\n- **Mutating `req.body`:** Prefer trimming into a local clone rather than mutating `req.body` directly.\n- **Breaking response shape:** 404 responses now include `details`. This is a breaking change — document and consider versioning or migration guidance.\n- **",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/c:/Users/johnn/OneDrive/Documents/GitHub/olaservo/mcp-server-instructions-demo/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "$mid": 1,
+            "fsPath": "c:\\Users\\johnn\\OneDrive\\Documents\\GitHub\\olaservo\\mcp-server-instructions-demo\\package.json",
+            "_sep": 1,
+            "external": "file:///c%3A/Users/johnn/OneDrive/Documents/GitHub/olaservo/mcp-server-instructions-demo/package.json",
+            "path": "/c:/Users/johnn/OneDrive/Documents/GitHub/olaservo/mcp-server-instructions-demo/package.json",
+            "scheme": "file"
+          }
+        },
+        {
+          "value": " / lock updates:** `supertest` added — ensure CI uses `npm ci` and that lockfile changes are intentional.\n\nNext steps I recommend (pick whichever you want me to do):\n- I can open a follow-up PR that:\n  - Unifies and tests the HTML regex,\n  - Enforces `id !== \"0\"` if desired,\n  - Converts validation to throw `ValidationException` and adds centralized error middleware, and\n  - Adds the missing tests and strengthens assertions.\n- Or I can wait for the author to address the review comments and re-run the review.\n\nWould you like me to implement the fixes and tests, or wait for the PR author to update and then re-review?",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/c:/Users/johnn/OneDrive/Documents/GitHub/olaservo/mcp-server-instructions-demo/",
+            "scheme": "file"
+          }
+        }
+      ],
+      "responseId": "response_39b97803-3df3-47fa-930d-509f19484096",
+      "result": {
+        "timings": {
+          "firstProgress": 3531,
+          "totalElapsed": 43578
+        },
+        "metadata": {
+          "codeBlocks": [],
+          "renderedUserMessage": [
+            {
+              "type": 1,
+              "text": "<context>\nThe current date is September 14, 2025.\n</context>\n<repoContext>\nBelow is the information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch.\nRepository name: mcp-server-instructions-demo\nOwner: olaservo\nCurrent branch: feature/input-validation-enhancement\n\n</repoContext>\n<reminderInstructions>\nYou are an agent—keep going until the user's query is completely resolved before ending your turn. ONLY stop if solved or genuinely blocked.\nTake action when possible; the user expects you to do useful work without unnecessary questions.\nAfter any parallel, read-only context gathering, give a concise progress update and what's next.\nAvoid repetition across turns: don't restate unchanged plans or sections (like the todo list) verbatim; provide delta updates or only the parts that changed.\nTool batches: You MUST preface each batch with a one-sentence why/what/outcome preamble.\nProgress cadence: After 3 to 5 tool calls, or when you create/edit > ~3 files in a burst, report progress.\nRequirements coverage: Read the user's ask in full and think carefully. Do not omit a requirement. If something cannot be done with available tools, note why briefly and propose a viable alternative.\nSkip filler acknowledgements like \"Sounds good\" or \"Okay, I will…\". Open with a purposeful one-liner about what you're doing next.\nWhen sharing setup or run steps, present terminal commands in fenced code blocks with the correct language tag. Keep commands copyable and on separate lines.\nAvoid definitive claims about the build or runtime setup unless verified from the provided context (or quick tool checks). If uncertain, state what's known from attachments and proceed with minimal steps you can adapt later.\nWhen you create or edit runnable code, run a test yourself to confirm it works; then share optional fenced commands for more advanced runs.\nFor non-trivial code generation, produce a complete, runnable solution: necessary source files, a tiny runner or test/benchmark harness, a minimal `README.md`, and updated dependency manifests (e.g., `package.json`, `requirements.txt`, `pyproject.toml`). Offer quick \"try it\" commands and optional platform-specific speed-ups when relevant.\nYour goal is to act like a pair programmer: be friendly and helpful. If you can do more, do more. Be proactive with your solutions, think about what the user needs and what they want, and implement it proactively.\n<importantReminders>\nBefore starting a task, review and follow the guidance in <responseModeHints>, <engineeringMindsetHints>, and <requirementsUnderstanding>.\nDO NOT state your identity or model name unless the user explicitly asks you to. \nBreak down the request into clear, actionable steps and present them at the beginning of your response before proceeding with implementation. This helps maintain visibility and ensures all requirements are addressed systematically.\nWhen referring to a filename or symbol in the user's workspace, wrap it in backticks.\n\n</importantReminders>\n\n</reminderInstructions>\n<userRequest>\nReview PR #18 in olaservo/mcp-server-instructions-demo.\n</userRequest>\n"
+            },
+            {
+              "type": 3,
+              "cacheType": "ephemeral"
+            }
+          ],
+          "renderedGlobalContext": [
+            {
+              "type": 1,
+              "text": "<environment_info>\nThe user's current OS is: Windows\nThe user's default shell is: \"powershell.exe\" (Windows PowerShell v5.1). When you generate terminal commands, please generate them correctly for this shell. Use the `;` character if joining commands on a single line is needed.\n</environment_info>\n<workspace_info>\nI am working in a workspace with the following folders:\n- c:\\Users\\johnn\\OneDrive\\Documents\\GitHub\\olaservo\\mcp-server-instructions-demo \nI am working in a workspace that has the following structure:\n```\ncreate-validation-pr.sh\njest.config.js\nLICENSE\npackage.json\nREADME.md\ntsconfig.json\nsrc/\n\tindex.ts\n\tmiddleware/\n\t\tvalidation.test.ts\n\t\tvalidation.ts\n\troutes/\n\t\ttodos.ts\n\tstore/\n\t\ttodoStore.test.ts\n\t\ttodoStore.ts\n\ttypes/\n\t\ttodo.ts\n```\nThis is the state of the context at this point in the conversation. The view of the workspace structure may be truncated. You can use tools to collect more context if needed.\n</workspace_info>\n"
+            },
+            {
+              "type": 3,
+              "cacheType": "ephemeral"
+            }
+          ],
+          "toolCallRounds": [
+            {
+              "response": "I'll fetch your GitHub identity, PR details, changed files, and the unified diff for PR #18 so I can inspect the changes and prepare review comments. ",
+              "toolCalls": [
+                {
+                  "name": "mcp_github-with-i_get_me",
+                  "arguments": "{}",
+                  "id": "call_eTG0fCRPdeYm6UJw3T048VkC__vscode-1757888487012"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "733eab05-6dbc-4b7e-815e-a5ad5b57b42e"
+            },
+            {
+              "response": "",
+              "toolCalls": [
+                {
+                  "name": "mcp_github-with-i_get_pull_request",
+                  "arguments": "{\"owner\":\"olaservo\",\"repo\":\"mcp-server-instructions-demo\",\"pullNumber\":18}",
+                  "id": "call_ZHYDGlOLC9nGh5NrOl6PacjO__vscode-1757888487013"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "eb00462b-0e6b-4826-9b9e-c0b54116aeea"
+            },
+            {
+              "response": "Now I'll fetch the list of files changed in the PR (first page) and the PR diff so I can review code-level changes. ",
+              "toolCalls": [
+                {
+                  "name": "mcp_github-with-i_get_pull_request_files",
+                  "arguments": "{\"owner\":\"olaservo\",\"repo\":\"mcp-server-instructions-demo\",\"pullNumber\":18,\"perPage\":100,\"page\":1}",
+                  "id": "call_50tWKBFul930HXkUajbgorIZ__vscode-1757888487014"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "fba8b1b5-b57e-41dc-a20c-e1255f3f7759"
+            },
+            {
+              "response": "Creating a pending review and adding focused file-level comments about the validation bugs, test issues, and API changes — then I'll submit the review requesting changes. ",
+              "toolCalls": [
+                {
+                  "name": "mcp_github-with-i_create_pending_pull_request_review",
+                  "arguments": "{\"owner\":\"olaservo\",\"repo\":\"mcp-server-instructions-demo\",\"pullNumber\":18}",
+                  "id": "call_j84ZQ0SvJfTb8Qz8tZQ58jIf__vscode-1757888487015"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "3f9a8bfd-ce09-4b3f-8ca4-e742c798c174"
+            },
+            {
+              "response": "",
+              "toolCalls": [
+                {
+                  "name": "mcp_github-with-i_add_comment_to_pending_review",
+                  "arguments": "{\"owner\":\"olaservo\",\"repo\":\"mcp-server-instructions-demo\",\"pullNumber\":18,\"body\":\"`src/middleware/validation.ts` — Validation regex inconsistency\\n\\n- The title HTML-detection uses `/\\\\u003c[^\\\\u003e]*\\\\u003e/g` while description originally used `/\\\\u003c.*\\\\u003e/g` in an earlier version. Please use a single well-tested regex for both to avoid false negatives and ensure consistency (e.g. `/\\\\u003c[^>]+>/g`).\\n\\n`src/middleware/validation.ts` — Description HTML check comment/BUG\\n\\n- There's a comment that the regex is inconsistent and may allow tags like `<img>`. The code still contains `/\\\\u003c.*\\\\u003e/g` in one place — please unify and add unit tests covering various tag shapes (`<script>`, `<img />`, `<div attr=\\\\\\\"x\\\\\\\">`, malformed tags).\\n\\n`src/middleware/validation.ts` — ID \\\"0\\\" edge case\\n\\n- `validateTodoId` accepts `\\\"0\\\"`. If your ID generation uses positive integers starting at `1`, treat `0` as invalid. Update validation or document why `0` is allowed.\\n\\n`src/routes/todos.ts` — Missing try/catch around store create\\n\\n- `todoStore.create` may throw; the new code comments that this is a bug but doesn't handle it. Wrap store calls in try/catch and return a `500` with a generic error message or let an error handler middleware map store errors to responses.\\n\\n`src/middleware/validation.test.ts` — Test gaps and TODO comments\\n\\n- The test file includes inline comments like `MISSING TEST` — please either add the tests or remove the TODOs. Specifically add a test for description HTML validation and the `id === \\\"0\\\"` edge case.\\n\\n`src/middleware/validation.test.ts` — Test app setup uses middleware as global\\n\\n- `createTestApp` applies the middleware globally which is fine, but for `validateTodoId` testing you instead mount it on `/:id` — keep patterns consistent for clarity.\\n\\n`src/routes/todos.ts` — Response shape change\\n\\n- You changed 404 responses to include a `details` array. This is a breaking change; ensure README and changelog mention it and consider version bump. Also update any API consumers/docs accordingly.\",\"path\":\"src/middleware/validation.ts\",\"line\":1,\"side\":\"RIGHT\",\"startLine\":1,\"subjectType\":\"FILE\"}",
+                  "id": "call_LqP4wr5hrEVWoamLnhRLSuO9__vscode-1757888487016"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "1ffa317f-83d3-4939-9456-4215e4ef2aa9"
+            },
+            {
+              "response": "",
+              "toolCalls": [
+                {
+                  "name": "mcp_github-with-i_add_comment_to_pending_review",
+                  "arguments": "{\"owner\":\"olaservo\",\"repo\":\"mcp-server-instructions-demo\",\"pullNumber\":18,\"body\":\"`src/middleware/validation.ts` — ValidationException class exists but is unused\\n\\n- `ValidationException` is defined but never thrown or passed to `next()`. Consider using it with `next(new ValidationException(errors))` and adding centralized error-handling middleware to format errors consistently across the app.\",\"path\":\"src/middleware/validation.ts\",\"line\":1,\"side\":\"RIGHT\",\"startLine\":1,\"subjectType\":\"FILE\"}",
+                  "id": "call_4Wu9IBQ1GBuW87Bb8TFOBaeg__vscode-1757888487017"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "c2417ef6-190c-491e-8f9c-a0f82f95d151"
+            },
+            {
+              "response": "",
+              "toolCalls": [
+                {
+                  "name": "mcp_github-with-i_add_comment_to_pending_review",
+                  "arguments": "{\"owner\":\"olaservo\",\"repo\":\"mcp-server-instructions-demo\",\"pullNumber\":18,\"body\":\"`src/middleware/validation.test.ts` — Assertion strictness\\n\\n- Many tests assert `response.status` and look for one error object in `details`. Add assertions for other properties (`error` string, absence/presence of other fields) and validate `Content-Type` header to ensure consistent API behavior. Also consider using snapshot tests for error payloads to avoid brittle object ordering mistakes.\",\"path\":\"src/middleware/validation.test.ts\",\"line\":1,\"side\":\"RIGHT\",\"startLine\":1,\"subjectType\":\"FILE\"}",
+                  "id": "call_eHF3AN9Ft0WGR7l0jVEXnoQ7__vscode-1757888487018"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "61549ec6-893e-4452-83a9-8904d3a8ce01"
+            },
+            {
+              "response": "",
+              "toolCalls": [
+                {
+                  "name": "mcp_github-with-i_add_comment_to_pending_review",
+                  "arguments": "{\"owner\":\"olaservo\",\"repo\":\"mcp-server-instructions-demo\",\"pullNumber\":18,\"body\":\"`src/routes/todos.ts` — Trimming and optional chaining\\n\\n- Good improvement trimming inputs. Be careful: `if (updates.title) { updates.title = updates.title.trim(); }` will skip trimming when title is an empty string (already validated earlier), but using `typeof updates.title === 'string'` may be clearer. Also prefer not to mutate `req.body` directly; clone into a local `const trimmed = { ...updates }` to keep handlers pure.\",\"path\":\"src/routes/todos.ts\",\"line\":1,\"side\":\"RIGHT\",\"startLine\":1,\"subjectType\":\"FILE\"}",
+                  "id": "call_C2UzP2L0LAWW8OgkX3aF8ks1__vscode-1757888487019"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "306be605-93d5-4886-89e9-337322021a3e"
+            },
+            {
+              "response": "",
+              "toolCalls": [
+                {
+                  "name": "mcp_github-with-i_add_comment_to_pending_review",
+                  "arguments": "{\"owner\":\"olaservo\",\"repo\":\"mcp-server-instructions-demo\",\"pullNumber\":18,\"body\":\"`package.json` / `package-lock.json` — Dev deps added\\n\\n- Adding `supertest` is fine for tests, but avoid committing `package-lock.json` noise if not necessary. Ensure `npm install` on CI picks up the same versions; consider updating `README.md` to list `npm ci` as the deterministic install command for CI.\\n\\n`README.md` — Error response format\\n\\n- README documents the new structured error format. Call out this is a breaking change near the top and mention migration guidance for API clients (simple examples for mapping previous `error` string to the new format).\",\"path\":\"package.json\",\"line\":1,\"side\":\"RIGHT\",\"startLine\":1,\"subjectType\":\"FILE\"}",
+                  "id": "call_eA4dqhoWO1xuQv5fSpxj9mID__vscode-1757888487020"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "4618ca87-3c45-4ffd-af89-fb80641d4d95"
+            },
+            {
+              "response": "",
+              "toolCalls": [
+                {
+                  "name": "mcp_github-with-i_submit_pending_pull_request_review",
+                  "arguments": "{\"owner\":\"olaservo\",\"repo\":\"mcp-server-instructions-demo\",\"pullNumber\":18,\"event\":\"REQUEST_CHANGES\",\"body\":\"Thanks — overall this adds useful validation and coverage, but I found several issues that need addressing before merging:\\n\\n- Unify HTML-detection regex and add tests for various tag forms.\\n- Handle ID `0` case or document why it’s allowed.\\n- Use or remove the unused `ValidationException` class; prefer `next()`-based errors and centralized error middleware.\\n- Add try/catch around store operations to avoid crashing the server.\\n- Fill missing tests noted in test file and strengthen assertions.\\n- Consider immutability when trimming `req.body` fields.\\n- Document breaking response changes clearly and consider versioning.\\n\\nI left file-level comments with more details. After these are addressed I’ll re-review and approve.\"}",
+                  "id": "call_qRNKSdMNe841Qc0G3mCSakib__vscode-1757888487021"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "3aa80eb5-8508-45ae-acfc-6bb74f03348f"
+            },
+            {
+              "response": "I've reviewed PR #18 and submitted a request-for-changes review with file-level comments.\n\n**What I did (quick summary)**\n- Fetched your GitHub identity and PR details.\n- Retrieved changed files and the unified diff for PR #18.\n- Created a pending review, added targeted comments on the new validation code, tests, routes, and package changes.\n- Submitted the review as `REQUEST_CHANGES` with a summary of required fixes.\n\n**Main issues I raised**\n- **HTML-detection regex inconsistency:** Use a single tested regex for both `title` and `description` to avoid false negatives (e.g., `<img/>`, `<div attr=\"x\">`).\n- **ID \"0\" edge case:** `validateTodoId` currently allows `\"0\"`; decide whether `0` should be valid and enforce that consistently.\n- **Unused ValidationException:** Either use it with `next(new ValidationException(errors))` and centralized error middleware, or remove it.\n- **Missing try/catch around store operations:** `todoStore.create` (and other store calls) may throw — add try/catch and handle errors instead of letting the server crash.\n- **Tests contain TODOs / missing cases:** Add the tests mentioned in comments (description HTML validation, `id === \"0\"` edge case) and strengthen assertions (error string, content-type, snapshots).\n- **Mutating `req.body`:** Prefer trimming into a local clone rather than mutating `req.body` directly.\n- **Breaking response shape:** 404 responses now include `details`. This is a breaking change — document and consider versioning or migration guidance.\n- **package.json / lock updates:** `supertest` added — ensure CI uses `npm ci` and that lockfile changes are intentional.\n\nNext steps I recommend (pick whichever you want me to do):\n- I can open a follow-up PR that:\n  - Unifies and tests the HTML regex,\n  - Enforces `id !== \"0\"` if desired,\n  - Converts validation to throw `ValidationException` and adds centralized error middleware, and\n  - Adds the missing tests and strengthens assertions.\n- Or I can wait for the author to address the review comments and re-run the review.\n\nWould you like me to implement the fixes and tests, or wait for the PR author to update and then re-review?",
+              "toolCalls": [],
+              "toolInputRetry": 0,
+              "id": "fb0d4763-a102-4d3a-9e50-903b9e9984ce"
+            }
+          ],
+          "toolCallResults": {
+            "call_eTG0fCRPdeYm6UJw3T048VkC__vscode-1757888487012": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "{\"login\":\"dandeliongold\",\"id\":83384332,\"profile_url\":\"https://github.com/dandeliongold\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/83384332?v=4\",\"details\":{\"name\":\"Dandelion Gold\",\"company\":\"Dandelion Gold, LLC\",\"blog\":\"https://www.dandeliongold.com/\",\"location\":\"The Underestimated City, AZ\",\"public_repos\":17,\"public_gists\":2,\"followers\":2,\"following\":2,\"created_at\":\"2021-04-29T02:50:22Z\",\"updated_at\":\"2025-09-14T21:17:20Z\",\"total_private_repos\":7,\"owned_private_repos\":7}}"
+                }
+              ]
+            },
+            "call_ZHYDGlOLC9nGh5NrOl6PacjO__vscode-1757888487013": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "{\"id\":2827238812,\"number\":18,\"state\":\"open\",\"locked\":false,\"title\":\"Add comprehensive input validation with detailed error responses\",\"body\":\"## Summary\\n- Added comprehensive input validation middleware for all Todo endpoints\\n- Implemented field-specific error messages with structured error responses  \\n- Added validation for title length, HTML tag prevention, and type checking\\n- Enhanced ID parameter validation for route security\\n- Added comprehensive test coverage for all validation scenarios\\n\\n## Changes Made\\n\\n### New Files\\n- `src/middleware/validation.ts` - Core validation logic with custom error handling\\n- `src/middleware/validation.test.ts` - Comprehensive test suite (15+ test cases)\\n\\n### Modified Files\\n- `src/routes/todos.ts` - Integrated validation middleware, improved error responses\\n- `README.md` - Added validation rules and error response format documentation\\n- `package.json` - Added supertest for API testing\\n\\n### Validation Rules Implemented\\n- **Title**: Required, 1-100 chars, no HTML tags, string type validation\\n- **Description**: Optional, max 500 chars, no HTML tags, string type validation  \\n- **Completed**: Boolean type validation when provided\\n- **ID Parameters**: Positive integer validation for all routes\\n\\n## Test Coverage\\n- Valid input acceptance\\n- Missing required fields\\n- Invalid data types\\n- Length limit enforcement\\n- HTML tag prevention (XSS protection)\\n- Multiple simultaneous errors\\n- Edge cases and boundary conditions\\n\\n## API Response Changes\\n**Before**: Simple error strings\\n```json\\n{ \\\"error\\\": \\\"Title is required\\\" }\\n```\\n\\n**After**: Structured error objects with field details\\n```json\\n{\\n  \\\"error\\\": \\\"Validation failed\\\", \\n  \\\"details\\\": [\\n    { \\\"field\\\": \\\"title\\\", \\\"message\\\": \\\"Title is required\\\" },\\n    { \\\"field\\\": \\\"description\\\", \\\"message\\\": \\\"Description must be 500 characters or less\\\" }\\n  ]\\n}\\n```\\n\\n## Security Improvements\\n- HTML tag prevention to mitigate XSS attacks\\n- Input sanitization with automatic trimming\\n- Type validation to prevent injection attacks\\n- ID format validation to prevent path traversal\\n\\n## Testing Instructions\\n\\n1. **Install dependencies**: `npm install`\\n2. **Run test suite**: `npm test` (should show 15+ passing tests)\\n3. **Test API manually**:\\n   ```bash\\n   npm run dev\\n   \\n   # Test valid creation\\n   curl -X POST localhost:3000/api/todos \\\\\\n     -H \\\"Content-Type: application/json\\\" \\\\\\n     -d '{\\\"title\\\":\\\"Valid Todo\\\",\\\"description\\\":\\\"Valid description\\\"}'\\n   \\n   # Test validation errors\\n   curl -X POST localhost:3000/api/todos \\\\\\n     -H \\\"Content-Type: application/json\\\" \\\\\\n     -d '{\\\"title\\\":\\\"\\\",\\\"description\\\":\\\"'$(printf 'a%.0s' {1..501})'\\\"}'\\n   ```\\n\\n## Breaking Changes\\n**Error response format has changed** - API consumers will need to handle the new structured error format\\n\\n## Future Enhancements\\n- [ ] Add rate limiting validation\\n- [ ] Implement custom validation rules configuration\\n- [ ] Add internationalization for error messages\\n- [ ] Consider adding request sanitization middleware\",\"created_at\":\"2025-09-14T22:28:03Z\",\"updated_at\":\"2025-09-14T22:28:03Z\",\"user\":{\"login\":\"olaservo\",\"id\":16480113,\"node_id\":\"MDQ6VXNlcjE2NDgwMTEz\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/16480113?v=4\",\"html_url\":\"https://github.com/olaservo\",\"gravatar_id\":\"\",\"type\":\"User\",\"site_admin\":false,\"url\":\"https://api.github.com/users/olaservo\",\"events_url\":\"https://api.github.com/users/olaservo/events{/privacy}\",\"following_url\":\"https://api.github.com/users/olaservo/following{/other_user}\",\"followers_url\":\"https://api.github.com/users/olaservo/followers\",\"gists_url\":\"https://api.github.com/users/olaservo/gists{/gist_id}\",\"organizations_url\":\"https://api.github.com/users/olaservo/orgs\",\"received_events_url\":\"https://api.github.com/users/olaservo/received_events\",\"repos_url\":\"https://api.github.com/users/olaservo/repos\",\"starred_url\":\"https://api.github.com/users/olaservo/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/olaservo/subscriptions\"},\"draft\":false,\"url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/18\",\"html_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/pull/18\",\"issue_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/18\",\"statuses_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/statuses/c114caaa650ca7994614478a4b042312b999525c\",\"diff_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/pull/18.diff\",\"patch_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/pull/18.patch\",\"commits_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/18/commits\",\"comments_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/18/comments\",\"review_comments_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/18/comments\",\"review_comment_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/comments{/number}\",\"author_association\":\"OWNER\",\"node_id\":\"PR_kwDOPvuGhM6ohD2c\",\"merged\":false,\"mergeable\":true,\"mergeable_state\":\"clean\",\"rebaseable\":true,\"merge_commit_sha\":\"5dc0a066405120a379e6d5f7c1f6901f7c8ab561\",\"comments\":0,\"commits\":1,\"additions\":550,\"deletions\":17,\"changed_files\":6,\"maintainer_can_modify\":false,\"review_comments\":0,\"_links\":{\"self\":{\"href\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/18\"},\"html\":{\"href\":\"https://github.com/olaservo/mcp-server-instructions-demo/pull/18\"},\"issue\":{\"href\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/18\"},\"comments\":{\"href\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/18/comments\"},\"review_comments\":{\"href\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/18/comments\"},\"review_comment\":{\"href\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/comments{/number}\"},\"commits\":{\"href\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls/18/commits\"},\"statuses\":{\"href\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/statuses/c114caaa650ca7994614478a4b042312b999525c\"}},\"head\":{\"label\":\"olaservo:feature/input-validation-enhancement\",\"ref\":\"feature/input-validation-enhancement\",\"sha\":\"c114caaa650ca7994614478a4b042312b999525c\",\"repo\":{\"id\":1056671364,\"node_id\":\"R_kgDOPvuGhA\",\"owner\":{\"login\":\"olaservo\",\"id\":16480113,\"node_id\":\"MDQ6VXNlcjE2NDgwMTEz\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/16480113?v=4\",\"html_url\":\"https://github.com/olaservo\",\"gravatar_id\":\"\",\"type\":\"User\",\"site_admin\":false,\"url\":\"https://api.github.com/users/olaservo\",\"events_url\":\"https://api.github.com/users/olaservo/events{/privacy}\",\"following_url\":\"https://api.github.com/users/olaservo/following{/other_user}\",\"followers_url\":\"https://api.github.com/users/olaservo/followers\",\"gists_url\":\"https://api.github.com/users/olaservo/gists{/gist_id}\",\"organizations_url\":\"https://api.github.com/users/olaservo/orgs\",\"received_events_url\":\"https://api.github.com/users/olaservo/received_events\",\"repos_url\":\"https://api.github.com/users/olaservo/repos\",\"starred_url\":\"https://api.github.com/users/olaservo/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/olaservo/subscriptions\"},\"name\":\"mcp-server-instructions-demo\",\"full_name\":\"olaservo/mcp-server-instructions-demo\",\"description\":\"Repo for demonstrating and evaluating server instructions\",\"default_branch\":\"main\",\"created_at\":\"2025-09-14T15:17:24Z\",\"pushed_at\":\"2025-09-14T22:28:01Z\",\"updated_at\":\"2025-09-14T21:39:36Z\",\"html_url\":\"https://github.com/olaservo/mcp-server-instructions-demo\",\"clone_url\":\"https://github.com/olaservo/mcp-server-instructions-demo.git\",\"git_url\":\"git://github.com/olaservo/mcp-server-instructions-demo.git\",\"ssh_url\":\"git@github.com:olaservo/mcp-server-instructions-demo.git\",\"svn_url\":\"https://github.com/olaservo/mcp-server-instructions-demo\",\"language\":\"Shell\",\"fork\":false,\"forks_count\":0,\"open_issues_count\":1,\"open_issues\":1,\"stargazers_count\":0,\"watchers_count\":0,\"watchers\":0,\"size\":86,\"allow_forking\":true,\"web_commit_signoff_required\":false,\"archived\":false,\"disabled\":false,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"url\":\"https://api.github.com/licenses/mit\",\"spdx_id\":\"MIT\"},\"private\":false,\"has_issues\":true,\"has_wiki\":true,\"has_pages\":false,\"has_projects\":true,\"has_downloads\":true,\"has_discussions\":true,\"is_template\":false,\"url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo\",\"archive_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contributors\",\"deployments_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/deployments\",\"downloads_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/downloads\",\"events_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/events\",\"forks_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/forks\",\"git_commits_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/tags{/sha}\",\"hooks_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/hooks\",\"issue_comment_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/languages\",\"merges_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/merges\",\"milestones_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/releases{/id}\",\"stargazers_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/stargazers\",\"statuses_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/subscribers\",\"subscription_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/subscription\",\"tags_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/tags\",\"trees_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/trees{/sha}\",\"teams_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/teams\",\"visibility\":\"public\"},\"user\":{\"login\":\"olaservo\",\"id\":16480113,\"node_id\":\"MDQ6VXNlcjE2NDgwMTEz\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/16480113?v=4\",\"html_url\":\"https://github.com/olaservo\",\"gravatar_id\":\"\",\"type\":\"User\",\"site_admin\":false,\"url\":\"https://api.github.com/users/olaservo\",\"events_url\":\"https://api.github.com/users/olaservo/events{/privacy}\",\"following_url\":\"https://api.github.com/users/olaservo/following{/other_user}\",\"followers_url\":\"https://api.github.com/users/olaservo/followers\",\"gists_url\":\"https://api.github.com/users/olaservo/gists{/gist_id}\",\"organizations_url\":\"https://api.github.com/users/olaservo/orgs\",\"received_events_url\":\"https://api.github.com/users/olaservo/received_events\",\"repos_url\":\"https://api.github.com/users/olaservo/repos\",\"starred_url\":\"https://api.github.com/users/olaservo/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/olaservo/subscriptions\"}},\"base\":{\"label\":\"olaservo:main\",\"ref\":\"main\",\"sha\":\"e187433b65925d24aa6541e88f12f73843274e38\",\"repo\":{\"id\":1056671364,\"node_id\":\"R_kgDOPvuGhA\",\"owner\":{\"login\":\"olaservo\",\"id\":16480113,\"node_id\":\"MDQ6VXNlcjE2NDgwMTEz\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/16480113?v=4\",\"html_url\":\"https://github.com/olaservo\",\"gravatar_id\":\"\",\"type\":\"User\",\"site_admin\":false,\"url\":\"https://api.github.com/users/olaservo\",\"events_url\":\"https://api.github.com/users/olaservo/events{/privacy}\",\"following_url\":\"https://api.github.com/users/olaservo/following{/other_user}\",\"followers_url\":\"https://api.github.com/users/olaservo/followers\",\"gists_url\":\"https://api.github.com/users/olaservo/gists{/gist_id}\",\"organizations_url\":\"https://api.github.com/users/olaservo/orgs\",\"received_events_url\":\"https://api.github.com/users/olaservo/received_events\",\"repos_url\":\"https://api.github.com/users/olaservo/repos\",\"starred_url\":\"https://api.github.com/users/olaservo/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/olaservo/subscriptions\"},\"name\":\"mcp-server-instructions-demo\",\"full_name\":\"olaservo/mcp-server-instructions-demo\",\"description\":\"Repo for demonstrating and evaluating server instructions\",\"default_branch\":\"main\",\"created_at\":\"2025-09-14T15:17:24Z\",\"pushed_at\":\"2025-09-14T22:28:01Z\",\"updated_at\":\"2025-09-14T21:39:36Z\",\"html_url\":\"https://github.com/olaservo/mcp-server-instructions-demo\",\"clone_url\":\"https://github.com/olaservo/mcp-server-instructions-demo.git\",\"git_url\":\"git://github.com/olaservo/mcp-server-instructions-demo.git\",\"ssh_url\":\"git@github.com:olaservo/mcp-server-instructions-demo.git\",\"svn_url\":\"https://github.com/olaservo/mcp-server-instructions-demo\",\"language\":\"Shell\",\"fork\":false,\"forks_count\":0,\"open_issues_count\":1,\"open_issues\":1,\"stargazers_count\":0,\"watchers_count\":0,\"watchers\":0,\"size\":86,\"allow_forking\":true,\"web_commit_signoff_required\":false,\"archived\":false,\"disabled\":false,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"url\":\"https://api.github.com/licenses/mit\",\"spdx_id\":\"MIT\"},\"private\":false,\"has_issues\":true,\"has_wiki\":true,\"has_pages\":false,\"has_projects\":true,\"has_downloads\":true,\"has_discussions\":true,\"is_template\":false,\"url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo\",\"archive_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contributors\",\"deployments_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/deployments\",\"downloads_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/downloads\",\"events_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/events\",\"forks_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/forks\",\"git_commits_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/tags{/sha}\",\"hooks_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/hooks\",\"issue_comment_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/languages\",\"merges_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/merges\",\"milestones_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/releases{/id}\",\"stargazers_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/stargazers\",\"statuses_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/subscribers\",\"subscription_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/subscription\",\"tags_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/tags\",\"trees_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/git/trees{/sha}\",\"teams_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/teams\",\"visibility\":\"public\"},\"user\":{\"login\":\"olaservo\",\"id\":16480113,\"node_id\":\"MDQ6VXNlcjE2NDgwMTEz\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/16480113?v=4\",\"html_url\":\"https://github.com/olaservo\",\"gravatar_id\":\"\",\"type\":\"User\",\"site_admin\":false,\"url\":\"https://api.github.com/users/olaservo\",\"events_url\":\"https://api.github.com/users/olaservo/events{/privacy}\",\"following_url\":\"https://api.github.com/users/olaservo/following{/other_user}\",\"followers_url\":\"https://api.github.com/users/olaservo/followers\",\"gists_url\":\"https://api.github.com/users/olaservo/gists{/gist_id}\",\"organizations_url\":\"https://api.github.com/users/olaservo/orgs\",\"received_events_url\":\"https://api.github.com/users/olaservo/received_events\",\"repos_url\":\"https://api.github.com/users/olaservo/repos\",\"starred_url\":\"https://api.github.com/users/olaservo/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/olaservo/subscriptions\"}}}"
+                }
+              ]
+            },
+            "call_50tWKBFul930HXkUajbgorIZ__vscode-1757888487014": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "[{\"sha\":\"8c998e5fc0eff6f95158faf136a4d6af793c63c8\",\"filename\":\"README.md\",\"additions\":27,\"deletions\":0,\"changes\":27,\"status\":\"modified\",\"patch\":\"@@ -48,3 +48,30 @@ npm run lint\\n   updatedAt: Date;\\n }\\n ```\\n+\\n+## Validation Rules\\n+\\n+### Creating Todos\\n+- **title**: Required, 1-100 characters, no HTML tags\\n+- **description**: Optional, max 500 characters, no HTML tags\\n+\\n+### Updating Todos\\n+- **title**: Optional, 1-100 characters, no HTML tags (if provided)\\n+- **description**: Optional, max 500 characters, no HTML tags (if provided)  \\n+- **completed**: Optional, must be boolean (if provided)\\n+\\n+### ID Parameters\\n+- Must be positive integers only\\n+\\n+### Error Response Format\\n+```json\\n+{\\n+  \\\"error\\\": \\\"Validation failed\\\",\\n+  \\\"details\\\": [\\n+    {\\n+      \\\"field\\\": \\\"title\\\",\\n+      \\\"message\\\": \\\"Title is required\\\"\\n+    }\\n+  ]\\n+}\\n+```\",\"blob_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/blob/c114caaa650ca7994614478a4b042312b999525c/README.md\",\"raw_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/raw/c114caaa650ca7994614478a4b042312b999525c/README.md\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/README.md?ref=c114caaa650ca7994614478a4b042312b999525c\"},{\"sha\":\"68519061aa4ac622367829e4f985ea8edcb12b77\",\"filename\":\"package-lock.json\",\"additions\":250,\"deletions\":0,\"changes\":250,\"status\":\"modified\",\"patch\":\"@@ -15,11 +15,13 @@\\n         \\\"@types/express\\\": \\\"^4.17.17\\\",\\n         \\\"@types/jest\\\": \\\"^29.5.5\\\",\\n         \\\"@types/node\\\": \\\"^20.6.0\\\",\\n+        \\\"@types/supertest\\\": \\\"^6.0.3\\\",\\n         \\\"@typescript-eslint/eslint-plugin\\\": \\\"^6.7.0\\\",\\n         \\\"@typescript-eslint/parser\\\": \\\"^6.7.0\\\",\\n         \\\"eslint\\\": \\\"^8.49.0\\\",\\n         \\\"jest\\\": \\\"^29.7.0\\\",\\n         \\\"prettier\\\": \\\"^3.0.3\\\",\\n+        \\\"supertest\\\": \\\"^7.1.4\\\",\\n         \\\"ts-jest\\\": \\\"^29.1.1\\\",\\n         \\\"ts-node\\\": \\\"^10.9.1\\\",\\n         \\\"typescript\\\": \\\"^5.2.2\\\"\\n@@ -1173,6 +1175,19 @@\\n         \\\"@jridgewell/sourcemap-codec\\\": \\\"^1.4.14\\\"\\n       }\\n     },\\n+    \\\"node_modules/@noble/hashes\\\": {\\n+      \\\"version\\\": \\\"1.8.0\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/@noble/hashes/-/hashes-1.8.0.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"^14.21.3 || \\u003e=16\\\"\\n+      },\\n+      \\\"funding\\\": {\\n+        \\\"url\\\": \\\"https://paulmillr.com/funding/\\\"\\n+      }\\n+    },\\n     \\\"node_modules/@nodelib/fs.scandir\\\": {\\n       \\\"version\\\": \\\"2.1.5\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz\\\",\\n@@ -1211,6 +1226,16 @@\\n         \\\"node\\\": \\\"\\u003e= 8\\\"\\n       }\\n     },\\n+    \\\"node_modules/@paralleldrive/cuid2\\\": {\\n+      \\\"version\\\": \\\"2.2.2\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/@paralleldrive/cuid2/-/cuid2-2.2.2.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-ZOBkgDwEdoYVlSeRbYYXs0S9MejQofiVYoTbKzy/6GQa39/q5tQU2IX46+shYnUkpEl3wc+J6wRlar7r2EK2xA==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"@noble/hashes\\\": \\\"^1.1.5\\\"\\n+      }\\n+    },\\n     \\\"node_modules/@sinclair/typebox\\\": {\\n       \\\"version\\\": \\\"0.27.8\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/@sinclair/typebox/-/typebox-0.27.8.tgz\\\",\\n@@ -1332,6 +1357,13 @@\\n         \\\"@types/node\\\": \\\"*\\\"\\n       }\\n     },\\n+    \\\"node_modules/@types/cookiejar\\\": {\\n+      \\\"version\\\": \\\"2.1.5\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/@types/cookiejar/-/cookiejar-2.1.5.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-he+DHOWReW0nghN24E1WUqM0efK4kI9oTqDm6XmK8ZPe2djZ90BSNdGnIyCLzCPw7/pogPlGbzI2wHGGmi4O/Q==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\"\\n+    },\\n     \\\"node_modules/@types/express\\\": {\\n       \\\"version\\\": \\\"4.17.23\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/@types/express/-/express-4.17.23.tgz\\\",\\n@@ -1420,6 +1452,13 @@\\n       \\\"dev\\\": true,\\n       \\\"license\\\": \\\"MIT\\\"\\n     },\\n+    \\\"node_modules/@types/methods\\\": {\\n+      \\\"version\\\": \\\"1.1.4\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/@types/methods/-/methods-1.1.4.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-ymXWVrDiCxTBE3+RIrrP533E70eA+9qu7zdWoHuOmGujkYtzf4HQF96b8nwHLqhuf4ykX61IGRIB38CC6/sImQ==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\"\\n+    },\\n     \\\"node_modules/@types/mime\\\": {\\n       \\\"version\\\": \\\"1.3.5\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/@types/mime/-/mime-1.3.5.tgz\\\",\\n@@ -1488,6 +1527,30 @@\\n       \\\"dev\\\": true,\\n       \\\"license\\\": \\\"MIT\\\"\\n     },\\n+    \\\"node_modules/@types/superagent\\\": {\\n+      \\\"version\\\": \\\"8.1.9\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/@types/superagent/-/superagent-8.1.9.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-pTVjI73witn+9ILmoJdajHGW2jkSaOzhiFYF1Rd3EQ94kymLqB9PjD9ISg7WaALC7+dCHT0FGe9T2LktLq/3GQ==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"@types/cookiejar\\\": \\\"^2.1.5\\\",\\n+        \\\"@types/methods\\\": \\\"^1.1.4\\\",\\n+        \\\"@types/node\\\": \\\"*\\\",\\n+        \\\"form-data\\\": \\\"^4.0.0\\\"\\n+      }\\n+    },\\n+    \\\"node_modules/@types/supertest\\\": {\\n+      \\\"version\\\": \\\"6.0.3\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/@types/supertest/-/supertest-6.0.3.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-8WzXq62EXFhJ7QsH3Ocb/iKQ/Ty9ZVWnVzoTKc9tyyFRRF3a74Tk2+TLFgaFFw364Ere+npzHKEJ6ga2LzIL7w==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"@types/methods\\\": \\\"^1.1.4\\\",\\n+        \\\"@types/superagent\\\": \\\"^8.1.0\\\"\\n+      }\\n+    },\\n     \\\"node_modules/@types/yargs\\\": {\\n       \\\"version\\\": \\\"17.0.33\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/@types/yargs/-/yargs-17.0.33.tgz\\\",\\n@@ -1875,6 +1938,20 @@\\n         \\\"node\\\": \\\"\\u003e=8\\\"\\n       }\\n     },\\n+    \\\"node_modules/asap\\\": {\\n+      \\\"version\\\": \\\"2.0.6\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/asap/-/asap-2.0.6.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-BSHWgDSAiKs50o2Re8ppvp3seVHXSRM44cdSsT9FfNEUUZLOGWVCsiWaRPWM1Znn+mqZ1OfVZ3z3DWEzSp7hRA==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\"\\n+    },\\n+    \\\"node_modules/asynckit\\\": {\\n+      \\\"version\\\": \\\"0.4.0\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\"\\n+    },\\n     \\\"node_modules/babel-jest\\\": {\\n       \\\"version\\\": \\\"29.7.0\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/babel-jest/-/babel-jest-29.7.0.tgz\\\",\\n@@ -2326,6 +2403,29 @@\\n       \\\"dev\\\": true,\\n       \\\"license\\\": \\\"MIT\\\"\\n     },\\n+    \\\"node_modules/combined-stream\\\": {\\n+      \\\"version\\\": \\\"1.0.8\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"delayed-stream\\\": \\\"~1.0.0\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e= 0.8\\\"\\n+      }\\n+    },\\n+    \\\"node_modules/component-emitter\\\": {\\n+      \\\"version\\\": \\\"1.3.1\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/component-emitter/-/component-emitter-1.3.1.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-T0+barUSQRTUQASh8bx02dl+DhF54GtIDY13Y3m9oWTklKbb3Wv974meRpeZ3lp1JpLVECWWNHC4vaG2XHXouQ==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"funding\\\": {\\n+        \\\"url\\\": \\\"https://github.com/sponsors/sindresorhus\\\"\\n+      }\\n+    },\\n     \\\"node_modules/concat-map\\\": {\\n       \\\"version\\\": \\\"0.0.1\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz\\\",\\n@@ -2376,6 +2476,13 @@\\n       \\\"integrity\\\": \\\"sha512-QADzlaHc8icV8I7vbaJXJwod9HWYp8uCqf1xa4OfNu1T7JVxQIrUgOWtHdNDtPiywmFbiS12VjotIXLrKM3orQ==\\\",\\n       \\\"license\\\": \\\"MIT\\\"\\n     },\\n+    \\\"node_modules/cookiejar\\\": {\\n+      \\\"version\\\": \\\"2.1.4\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/cookiejar/-/cookiejar-2.1.4.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-LDx6oHrK+PhzLKJU9j5S7/Y3jM/mUHvD/DeI1WQmJn652iPC5Y4TBzC9l+5OMOXlyTTA+SmVUPm0HQUwpD5Jqw==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\"\\n+    },\\n     \\\"node_modules/create-jest\\\": {\\n       \\\"version\\\": \\\"29.7.0\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/create-jest/-/create-jest-29.7.0.tgz\\\",\\n@@ -2470,6 +2577,16 @@\\n         \\\"node\\\": \\\"\\u003e=0.10.0\\\"\\n       }\\n     },\\n+    \\\"node_modules/delayed-stream\\\": {\\n+      \\\"version\\\": \\\"1.0.0\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e=0.4.0\\\"\\n+      }\\n+    },\\n     \\\"node_modules/depd\\\": {\\n       \\\"version\\\": \\\"2.0.0\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/depd/-/depd-2.0.0.tgz\\\",\\n@@ -2499,6 +2616,17 @@\\n         \\\"node\\\": \\\"\\u003e=8\\\"\\n       }\\n     },\\n+    \\\"node_modules/dezalgo\\\": {\\n+      \\\"version\\\": \\\"1.0.4\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/dezalgo/-/dezalgo-1.0.4.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-rXSP0bf+5n0Qonsb+SVVfNfIsimO4HEtmnIpPHY8Q1UCzKlQrDMfdobr8nJOOsRgWCyMRqeSBQzmWUMq7zvVig==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"ISC\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"asap\\\": \\\"^2.0.0\\\",\\n+        \\\"wrappy\\\": \\\"1\\\"\\n+      }\\n+    },\\n     \\\"node_modules/diff\\\": {\\n       \\\"version\\\": \\\"4.0.2\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/diff/-/diff-4.0.2.tgz\\\",\\n@@ -2641,6 +2769,22 @@\\n         \\\"node\\\": \\\"\\u003e= 0.4\\\"\\n       }\\n     },\\n+    \\\"node_modules/es-set-tostringtag\\\": {\\n+      \\\"version\\\": \\\"2.1.0\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/es-set-tostringtag/-/es-set-tostringtag-2.1.0.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-j6vWzfrGVfyXxge+O0x5sh6cvxAog0a/4Rdd2K36zCMV5eJ+/+tOAngRO8cODMNWbVRdVlmGZQL2YS3yR8bIUA==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"es-errors\\\": \\\"^1.3.0\\\",\\n+        \\\"get-intrinsic\\\": \\\"^1.2.6\\\",\\n+        \\\"has-tostringtag\\\": \\\"^1.0.2\\\",\\n+        \\\"hasown\\\": \\\"^2.0.2\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e= 0.4\\\"\\n+      }\\n+    },\\n     \\\"node_modules/escalade\\\": {\\n       \\\"version\\\": \\\"3.2.0\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz\\\",\\n@@ -3030,6 +3174,13 @@\\n       \\\"dev\\\": true,\\n       \\\"license\\\": \\\"MIT\\\"\\n     },\\n+    \\\"node_modules/fast-safe-stringify\\\": {\\n+      \\\"version\\\": \\\"2.1.1\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/fast-safe-stringify/-/fast-safe-stringify-2.1.1.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\"\\n+    },\\n     \\\"node_modules/fastq\\\": {\\n       \\\"version\\\": \\\"1.19.1\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/fastq/-/fastq-1.19.1.tgz\\\",\\n@@ -3148,6 +3299,41 @@\\n       \\\"dev\\\": true,\\n       \\\"license\\\": \\\"ISC\\\"\\n     },\\n+    \\\"node_modules/form-data\\\": {\\n+      \\\"version\\\": \\\"4.0.4\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/form-data/-/form-data-4.0.4.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-KrGhL9Q4zjj0kiUt5OO4Mr/A/jlI2jDYs5eHBpYHPcBEVSiipAvn2Ko2HnPe20rmcuuvMHNdZFp+4IlGTMF0Ow==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"asynckit\\\": \\\"^0.4.0\\\",\\n+        \\\"combined-stream\\\": \\\"^1.0.8\\\",\\n+        \\\"es-set-tostringtag\\\": \\\"^2.1.0\\\",\\n+        \\\"hasown\\\": \\\"^2.0.2\\\",\\n+        \\\"mime-types\\\": \\\"^2.1.12\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e= 6\\\"\\n+      }\\n+    },\\n+    \\\"node_modules/formidable\\\": {\\n+      \\\"version\\\": \\\"3.5.4\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/formidable/-/formidable-3.5.4.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-YikH+7CUTOtP44ZTnUhR7Ic2UASBPOqmaRkRKxRbywPTe5VxF7RRCck4af9wutiZ/QKM5nME9Bie2fFaPz5Gug==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"@paralleldrive/cuid2\\\": \\\"^2.2.2\\\",\\n+        \\\"dezalgo\\\": \\\"^1.0.4\\\",\\n+        \\\"once\\\": \\\"^1.4.0\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e=14.0.0\\\"\\n+      },\\n+      \\\"funding\\\": {\\n+        \\\"url\\\": \\\"https://ko-fi.com/tunnckoCore/commissions\\\"\\n+      }\\n+    },\\n     \\\"node_modules/forwarded\\\": {\\n       \\\"version\\\": \\\"0.2.0\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/forwarded/-/forwarded-0.2.0.tgz\\\",\\n@@ -3443,6 +3629,22 @@\\n         \\\"url\\\": \\\"https://github.com/sponsors/ljharb\\\"\\n       }\\n     },\\n+    \\\"node_modules/has-tostringtag\\\": {\\n+      \\\"version\\\": \\\"1.0.2\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/has-tostringtag/-/has-tostringtag-1.0.2.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-NqADB8VjPFLM2V0VvHUewwwsw0ZWBaIdgo+ieHtK3hasLz4qeCRjYcqfB6AQrBggRKppKF8L52/VqdVsO47Dlw==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"has-symbols\\\": \\\"^1.0.3\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e= 0.4\\\"\\n+      },\\n+      \\\"funding\\\": {\\n+        \\\"url\\\": \\\"https://github.com/sponsors/ljharb\\\"\\n+      }\\n+    },\\n     \\\"node_modules/hasown\\\": {\\n       \\\"version\\\": \\\"2.0.2\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/hasown/-/hasown-2.0.2.tgz\\\",\\n@@ -5710,6 +5912,54 @@\\n         \\\"url\\\": \\\"https://github.com/sponsors/sindresorhus\\\"\\n       }\\n     },\\n+    \\\"node_modules/superagent\\\": {\\n+      \\\"version\\\": \\\"10.2.3\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/superagent/-/superagent-10.2.3.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-y/hkYGeXAj7wUMjxRbB21g/l6aAEituGXM9Rwl4o20+SX3e8YOSV6BxFXl+dL3Uk0mjSL3kCbNkwURm8/gEDig==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"component-emitter\\\": \\\"^1.3.1\\\",\\n+        \\\"cookiejar\\\": \\\"^2.1.4\\\",\\n+        \\\"debug\\\": \\\"^4.3.7\\\",\\n+        \\\"fast-safe-stringify\\\": \\\"^2.1.1\\\",\\n+        \\\"form-data\\\": \\\"^4.0.4\\\",\\n+        \\\"formidable\\\": \\\"^3.5.4\\\",\\n+        \\\"methods\\\": \\\"^1.1.2\\\",\\n+        \\\"mime\\\": \\\"2.6.0\\\",\\n+        \\\"qs\\\": \\\"^6.11.2\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e=14.18.0\\\"\\n+      }\\n+    },\\n+    \\\"node_modules/superagent/node_modules/mime\\\": {\\n+      \\\"version\\\": \\\"2.6.0\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/mime/-/mime-2.6.0.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-USPkMeET31rOMiarsBNIHZKLGgvKc/LrjofAnBlOttf5ajRvqiRA8QsenbcooctK6d6Ts6aqZXBA+XbkKthiQg==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"bin\\\": {\\n+        \\\"mime\\\": \\\"cli.js\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e=4.0.0\\\"\\n+      }\\n+    },\\n+    \\\"node_modules/supertest\\\": {\\n+      \\\"version\\\": \\\"7.1.4\\\",\\n+      \\\"resolved\\\": \\\"https://registry.npmjs.org/supertest/-/supertest-7.1.4.tgz\\\",\\n+      \\\"integrity\\\": \\\"sha512-tjLPs7dVyqgItVFirHYqe2T+MfWc2VOBQ8QFKKbWTA3PU7liZR8zoSpAi/C1k1ilm9RsXIKYf197oap9wXGVYg==\\\",\\n+      \\\"dev\\\": true,\\n+      \\\"license\\\": \\\"MIT\\\",\\n+      \\\"dependencies\\\": {\\n+        \\\"methods\\\": \\\"^1.1.2\\\",\\n+        \\\"superagent\\\": \\\"^10.2.3\\\"\\n+      },\\n+      \\\"engines\\\": {\\n+        \\\"node\\\": \\\"\\u003e=14.18.0\\\"\\n+      }\\n+    },\\n     \\\"node_modules/supports-color\\\": {\\n       \\\"version\\\": \\\"7.2.0\\\",\\n       \\\"resolved\\\": \\\"https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz\\\",\",\"blob_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/blob/c114caaa650ca7994614478a4b042312b999525c/package-lock.json\",\"raw_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/raw/c114caaa650ca7994614478a4b042312b999525c/package-lock.json\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/package-lock.json?ref=c114caaa650ca7994614478a4b042312b999525c\"},{\"sha\":\"861bece2d4ce22af43df18aa973ed76c47b24d17\",\"filename\":\"package.json\",\"additions\":10,\"deletions\":2,\"changes\":12,\"status\":\"modified\",\"patch\":\"@@ -12,7 +12,13 @@\\n     \\\"lint:fix\\\": \\\"eslint src --ext .ts --fix\\\",\\n     \\\"format\\\": \\\"prettier --write src/**/*.ts\\\"\\n   },\\n-  \\\"keywords\\\": [\\\"typescript\\\", \\\"express\\\", \\\"todo\\\", \\\"api\\\", \\\"demo\\\"],\\n+  \\\"keywords\\\": [\\n+    \\\"typescript\\\",\\n+    \\\"express\\\",\\n+    \\\"todo\\\",\\n+    \\\"api\\\",\\n+    \\\"demo\\\"\\n+  ],\\n   \\\"author\\\": \\\"\\\",\\n   \\\"license\\\": \\\"MIT\\\",\\n   \\\"dependencies\\\": {\\n@@ -22,13 +28,15 @@\\n     \\\"@types/express\\\": \\\"^4.17.17\\\",\\n     \\\"@types/jest\\\": \\\"^29.5.5\\\",\\n     \\\"@types/node\\\": \\\"^20.6.0\\\",\\n+    \\\"@types/supertest\\\": \\\"^6.0.3\\\",\\n     \\\"@typescript-eslint/eslint-plugin\\\": \\\"^6.7.0\\\",\\n     \\\"@typescript-eslint/parser\\\": \\\"^6.7.0\\\",\\n     \\\"eslint\\\": \\\"^8.49.0\\\",\\n     \\\"jest\\\": \\\"^29.7.0\\\",\\n     \\\"prettier\\\": \\\"^3.0.3\\\",\\n+    \\\"supertest\\\": \\\"^7.1.4\\\",\\n     \\\"ts-jest\\\": \\\"^29.1.1\\\",\\n     \\\"ts-node\\\": \\\"^10.9.1\\\",\\n     \\\"typescript\\\": \\\"^5.2.2\\\"\\n   }\\n-}\\n\\\\ No newline at end of file\\n+}\",\"blob_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/blob/c114caaa650ca7994614478a4b042312b999525c/package.json\",\"raw_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/raw/c114caaa650ca7994614478a4b042312b999525c/package.json\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/package.json?ref=c114caaa650ca7994614478a4b042312b999525c\"},{\"sha\":\"d0160a0359a49c96c73859a947c74aa8c479199f\",\"filename\":\"src/middleware/validation.test.ts\",\"additions\":122,\"deletions\":0,\"changes\":122,\"status\":\"added\",\"patch\":\"@@ -0,0 +1,122 @@\\n+import request from 'supertest';\\n+import express from 'express';\\n+import { validateTodoCreate, validateTodoUpdate, validateTodoId } from './validation';\\n+\\n+const createTestApp = (middleware: any) =\\u003e {\\n+  const app = express();\\n+  app.use(express.json());\\n+  app.use(middleware);\\n+  app.use((req, res) =\\u003e res.status(200).json({ success: true }));\\n+  return app;\\n+};\\n+\\n+describe('Validation Middleware', () =\\u003e {\\n+  describe('validateTodoCreate', () =\\u003e {\\n+    const app = createTestApp(validateTodoCreate);\\n+\\n+    it('should pass with valid data', async () =\\u003e {\\n+      const response = await request(app)\\n+        .post('/')\\n+        .send({ title: 'Valid Title', description: 'Valid description' });\\n+\\n+      expect(response.status).toBe(200);\\n+    });\\n+\\n+    it('should reject missing title', async () =\\u003e {\\n+      const response = await request(app)\\n+        .post('/')\\n+        .send({ description: 'Description without title' });\\n+\\n+      expect(response.status).toBe(400);\\n+      expect(response.body.error).toBe('Validation failed');\\n+      expect(response.body.details).toContainEqual({\\n+        field: 'title',\\n+        message: 'Title is required'\\n+      });\\n+    });\\n+\\n+    it('should reject empty title', async () =\\u003e {\\n+      const response = await request(app)\\n+        .post('/')\\n+        .send({ title: '   ' });\\n+\\n+      expect(response.status).toBe(400);\\n+      expect(response.body.details).toContainEqual({\\n+        field: 'title',\\n+        message: 'Title cannot be empty'\\n+      });\\n+    });\\n+\\n+    it('should reject title with HTML tags', async () =\\u003e {\\n+      const response = await request(app)\\n+        .post('/')\\n+        .send({ title: '\\u003cscript\\u003ealert(\\\"xss\\\")\\u003c/script\\u003e' });\\n+\\n+      expect(response.status).toBe(400);\\n+      expect(response.body.details).toContainEqual({\\n+        field: 'title',\\n+        message: 'Title cannot contain HTML tags'\\n+      });\\n+    });\\n+\\n+    // MISSING TEST: Should verify description HTML validation works consistently with title\\n+\\n+    it('should reject title over 100 characters', async () =\\u003e {\\n+      const longTitle = 'a'.repeat(101);\\n+      const response = await request(app)\\n+        .post('/')\\n+        .send({ title: longTitle });\\n+\\n+      expect(response.status).toBe(400);\\n+      expect(response.body.details).toContainEqual({\\n+        field: 'title',\\n+        message: 'Title must be 100 characters or less'\\n+      });\\n+    });\\n+\\n+    it('should reject description over 500 characters', async () =\\u003e {\\n+      const longDescription = 'a'.repeat(501);\\n+      const response = await request(app)\\n+        .post('/')\\n+        .send({ title: 'Valid Title', description: longDescription });\\n+\\n+      expect(response.status).toBe(400);\\n+      expect(response.body.details).toContainEqual({\\n+        field: 'description',\\n+        message: 'Description must be 500 characters or less'\\n+      });\\n+    });\\n+\\n+    it('should handle multiple validation errors', async () =\\u003e {\\n+      const response = await request(app)\\n+        .post('/')\\n+        .send({ title: '', description: 'a'.repeat(501) });\\n+\\n+      expect(response.status).toBe(400);\\n+      expect(response.body.details).toHaveLength(2);\\n+    });\\n+  });\\n+\\n+  describe('validateTodoId', () =\\u003e {\\n+    const app = express();\\n+    app.use('/:id', validateTodoId);\\n+    app.use((req, res) =\\u003e res.status(200).json({ success: true }));\\n+\\n+    it('should pass with valid numeric ID', async () =\\u003e {\\n+      const response = await request(app).get('/123');\\n+      expect(response.status).toBe(200);\\n+    });\\n+\\n+    it('should reject non-numeric ID', async () =\\u003e {\\n+      const response = await request(app).get('/abc');\\n+      expect(response.status).toBe(400);\\n+      expect(response.body.details).toContainEqual({\\n+        field: 'id',\\n+        message: 'ID must be a positive integer',\\n+        value: 'abc'\\n+      });\\n+    });\\n+\\n+    // MISSING TEST: Should test ID \\\"0\\\" edge case - currently no validation for this\\n+  });\\n+});\",\"blob_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/blob/c114caaa650ca7994614478a4b042312b999525c/src%2Fmiddleware%2Fvalidation.test.ts\",\"raw_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/raw/c114caaa650ca7994614478a4b042312b999525c/src%2Fmiddleware%2Fvalidation.test.ts\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/src%2Fmiddleware%2Fvalidation.test.ts?ref=c114caaa650ca7994614478a4b042312b999525c\"},{\"sha\":\"63b634efdc09275c0c320343090b31e7b03a918c\",\"filename\":\"src/middleware/validation.ts\",\"additions\":112,\"deletions\":0,\"changes\":112,\"status\":\"added\",\"patch\":\"@@ -0,0 +1,112 @@\\n+import { Request, Response, NextFunction } from 'express';\\n+\\n+export interface ValidationError {\\n+  field: string;\\n+  message: string;\\n+  value?: any;\\n+}\\n+\\n+export class ValidationException extends Error {\\n+  public errors: ValidationError[];\\n+\\n+  constructor(errors: ValidationError[]) {\\n+    super('Validation failed');\\n+    this.name = 'ValidationException';\\n+    this.errors = errors;\\n+  }\\n+}\\n+\\n+export const validateTodoCreate = (req: Request, res: Response, next: NextFunction) =\\u003e {\\n+  const errors: ValidationError[] = [];\\n+  const { title, description } = req.body;\\n+\\n+  // Validate title\\n+  if (!title) {\\n+    errors.push({ field: 'title', message: 'Title is required' });\\n+  } else if (typeof title !== 'string') {\\n+    errors.push({ field: 'title', message: 'Title must be a string', value: title });\\n+  } else if (title.trim().length === 0) {\\n+    errors.push({ field: 'title', message: 'Title cannot be empty' });\\n+  } else if (title.length \\u003e 100) {\\n+    errors.push({ field: 'title', message: 'Title must be 100 characters or less' });\\n+  } else if (/\\u003c[^\\u003e]*\\u003e/g.test(title)) {\\n+    errors.push({ field: 'title', message: 'Title cannot contain HTML tags' });\\n+  }\\n+\\n+  // Validate description\\n+  if (description !== undefined \\u0026\\u0026 description !== null) {\\n+    if (typeof description !== 'string') {\\n+      errors.push({ field: 'description', message: 'Description must be a string', value: description });\\n+    } else if (description.length \\u003e 500) {\\n+      errors.push({ field: 'description', message: 'Description must be 500 characters or less' });\\n+    } else if (/\\u003c.*\\u003e/g.test(description)) {  // BUG: Inconsistent regex - allows \\u003cimg\\u003e but title rejects it\\n+      errors.push({ field: 'description', message: 'Description cannot contain HTML tags' });\\n+    }\\n+  }\\n+\\n+  if (errors.length \\u003e 0) {\\n+    return res.status(400).json({\\n+      error: 'Validation failed',\\n+      details: errors\\n+    });\\n+  }\\n+\\n+  next();\\n+};\\n+\\n+export const validateTodoUpdate = (req: Request, res: Response, next: NextFunction) =\\u003e {\\n+  const errors: ValidationError[] = [];\\n+  const { title, description, completed } = req.body;\\n+\\n+  // Validate title if provided\\n+  if (title !== undefined) {\\n+    if (typeof title !== 'string') {\\n+      errors.push({ field: 'title', message: 'Title must be a string', value: title });\\n+    } else if (title.trim().length === 0) {\\n+      errors.push({ field: 'title', message: 'Title cannot be empty' });\\n+    } else if (title.length \\u003e 100) {\\n+      errors.push({ field: 'title', message: 'Title must be 100 characters or less' });\\n+    } else if (/\\u003c[^\\u003e]*\\u003e/g.test(title)) {\\n+      errors.push({ field: 'title', message: 'Title cannot contain HTML tags' });\\n+    }\\n+  }\\n+\\n+  // Validate description if provided\\n+  if (description !== undefined \\u0026\\u0026 description !== null) {\\n+    if (typeof description !== 'string') {\\n+      errors.push({ field: 'description', message: 'Description must be a string', value: description });\\n+    } else if (description.length \\u003e 500) {\\n+      errors.push({ field: 'description', message: 'Description must be 500 characters or less' });\\n+    } else if (/\\u003c[^\\u003e]*\\u003e/g.test(description)) {\\n+      errors.push({ field: 'description', message: 'Description cannot contain HTML tags' });\\n+    }\\n+  }\\n+\\n+  // Validate completed if provided\\n+  if (completed !== undefined \\u0026\\u0026 typeof completed !== 'boolean') {\\n+    errors.push({ field: 'completed', message: 'Completed must be a boolean', value: completed });\\n+  }\\n+\\n+  if (errors.length \\u003e 0) {\\n+    return res.status(400).json({\\n+      error: 'Validation failed',\\n+      details: errors\\n+    });\\n+  }\\n+\\n+  next();\\n+};\\n+\\n+export const validateTodoId = (req: Request, res: Response, next: NextFunction) =\\u003e {\\n+  const { id } = req.params;\\n+\\n+  if (!id || !/^\\\\d+$/.test(id)) {\\n+    return res.status(400).json({\\n+      error: 'Invalid ID format',\\n+      details: [{ field: 'id', message: 'ID must be a positive integer', value: id }]\\n+    });\\n+  }\\n+\\n+  // BUG: This allows ID \\\"0\\\" which may not be valid depending on our ID generation strategy\\n+  next();\\n+};\",\"blob_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/blob/c114caaa650ca7994614478a4b042312b999525c/src%2Fmiddleware%2Fvalidation.ts\",\"raw_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/raw/c114caaa650ca7994614478a4b042312b999525c/src%2Fmiddleware%2Fvalidation.ts\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/src%2Fmiddleware%2Fvalidation.ts?ref=c114caaa650ca7994614478a4b042312b999525c\"},{\"sha\":\"f6bbad312713f3a6a2ccfbee195e502fdd48343a\",\"filename\":\"src/routes/todos.ts\",\"additions\":29,\"deletions\":15,\"changes\":44,\"status\":\"modified\",\"patch\":\"@@ -1,6 +1,7 @@\\n import { Request, Response, Router } from 'express';\\n import { todoStore } from '../store/todoStore';\\n import { CreateTodoRequest, UpdateTodoRequest } from '../types/todo';\\n+import { validateTodoCreate, validateTodoUpdate, validateTodoId } from '../middleware/validation';\\n \\n const router = Router();\\n \\n@@ -9,54 +10,67 @@ router.get('/', (req: Request, res: Response) =\\u003e {\\n   res.json(todos);\\n });\\n \\n-router.get('/:id', (req: Request, res: Response) =\\u003e {\\n+router.get('/:id', validateTodoId, (req: Request, res: Response) =\\u003e {\\n   const { id } = req.params;\\n   const todo = todoStore.getById(id);\\n   \\n   if (!todo) {\\n-    return res.status(404).json({ error: 'Todo not found' });\\n+    return res.status(404).json({ \\n+      error: 'Todo not found',\\n+      details: [{ field: 'id', message: `Todo with ID ${id} does not exist`, value: id }]\\n+    });\\n   }\\n   \\n   res.json(todo);\\n });\\n \\n-router.post('/', (req: Request, res: Response) =\\u003e {\\n+router.post('/', validateTodoCreate, (req: Request, res: Response) =\\u003e {\\n   const { title, description }: CreateTodoRequest = req.body;\\n   \\n-  if (!title || title.trim() === '') {\\n-    return res.status(400).json({ error: 'Title is required' });\\n-  }\\n-  \\n-  const todo = todoStore.create({ title: title.trim(), description });\\n+  // BUG: No try-catch block - if todoStore.create throws, server will crash\\n+  const todo = todoStore.create({ \\n+    title: title.trim(), \\n+    description: description?.trim() || undefined \\n+  });\\n   res.status(201).json(todo);\\n });\\n \\n-router.put('/:id', (req: Request, res: Response) =\\u003e {\\n+router.put('/:id', validateTodoId, validateTodoUpdate, (req: Request, res: Response) =\\u003e {\\n   const { id } = req.params;\\n   const updates: UpdateTodoRequest = req.body;\\n   \\n-  if (updates.title !== undefined \\u0026\\u0026 updates.title.trim() === '') {\\n-    return res.status(400).json({ error: 'Title cannot be empty' });\\n+  // Trim string values\\n+  if (updates.title) {\\n+    updates.title = updates.title.trim();\\n+  }\\n+  if (updates.description) {\\n+    updates.description = updates.description.trim();\\n   }\\n   \\n   const updatedTodo = todoStore.update(id, updates);\\n   \\n   if (!updatedTodo) {\\n-    return res.status(404).json({ error: 'Todo not found' });\\n+    return res.status(404).json({ \\n+      error: 'Todo not found',\\n+      details: [{ field: 'id', message: `Todo with ID ${id} does not exist`, value: id }]\\n+    });\\n   }\\n   \\n   res.json(updatedTodo);\\n });\\n \\n-router.delete('/:id', (req: Request, res: Response) =\\u003e {\\n+router.delete('/:id', validateTodoId, (req: Request, res: Response) =\\u003e {\\n   const { id } = req.params;\\n   const deleted = todoStore.delete(id);\\n   \\n   if (!deleted) {\\n-    return res.status(404).json({ error: 'Todo not found' });\\n+    return res.status(404).json({ \\n+      error: 'Todo not found',\\n+      details: [{ field: 'id', message: `Todo with ID ${id} does not exist`, value: id }]\\n+    });\\n   }\\n   \\n   res.status(204).send();\\n });\\n \\n-export { router as todoRoutes };\\n\\\\ No newline at end of file\\n+export { router as todoRoutes };\",\"blob_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/blob/c114caaa650ca7994614478a4b042312b999525c/src%2Froutes%2Ftodos.ts\",\"raw_url\":\"https://github.com/olaservo/mcp-server-instructions-demo/raw/c114caaa650ca7994614478a4b042312b999525c/src%2Froutes%2Ftodos.ts\",\"contents_url\":\"https://api.github.com/repos/olaservo/mcp-server-instructions-demo/contents/src%2Froutes%2Ftodos.ts?ref=c114caaa650ca7994614478a4b042312b999525c\"}]"
+                }
+              ]
+            },
+            "call_j84ZQ0SvJfTb8Qz8tZQ58jIf__vscode-1757888487015": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "pending pull request created"
+                }
+              ]
+            },
+            "call_LqP4wr5hrEVWoamLnhRLSuO9__vscode-1757888487016": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "pull request review comment successfully added to pending review"
+                }
+              ]
+            },
+            "call_4Wu9IBQ1GBuW87Bb8TFOBaeg__vscode-1757888487017": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "pull request review comment successfully added to pending review"
+                }
+              ]
+            },
+            "call_eHF3AN9Ft0WGR7l0jVEXnoQ7__vscode-1757888487018": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "pull request review comment successfully added to pending review"
+                }
+              ]
+            },
+            "call_C2UzP2L0LAWW8OgkX3aF8ks1__vscode-1757888487019": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "pull request review comment successfully added to pending review"
+                }
+              ]
+            },
+            "call_eA4dqhoWO1xuQv5fSpxj9mID__vscode-1757888487020": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "pull request review comment successfully added to pending review"
+                }
+              ]
+            },
+            "call_qRNKSdMNe841Qc0G3mCSakib__vscode-1757888487021": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "pending pull request review successfully submitted"
+                }
+              ]
+            }
+          },
+          "modelMessageId": "0d92c0f0-5376-4a3a-9f46-5473a79e738a",
+          "responseId": "313e0fff-ecdd-49b5-bd79-b8da2ba9326f",
+          "sessionId": "77f4a0b2-8627-4831-ad90-6131e7b26800",
+          "agentId": "github.copilot.editsAgent"
+        },
+        "details": "GPT-5 mini • 0x"
+      },
+      "responseMarkdownInfo": [],
+      "followups": [],
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.31.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "list"
+          }
+        ],
+        "disambiguation": []
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "timestamp": 1757888895603,
+      "modelId": "copilot/gpt-5-mini"
+    }
+  ]
+}
