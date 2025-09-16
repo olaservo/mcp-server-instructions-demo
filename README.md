@@ -1,6 +1,6 @@
 # MCP Server Instructions Demo
 
-A minimal TypeScript Express API for evaluating the addition of server `instructions` in the GitHub MCP Server.
+A dummy TypeScript Express API for evaluating the addition of server `instructions` in the GitHub MCP Server.
 
 ## Evaluation setup
 
